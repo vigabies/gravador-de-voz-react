@@ -23,7 +23,7 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
     color: '#3B3355',
     opacity: 0.5,
-    top: 310,
+    top: 265,
   },
 
   text2: {
@@ -44,6 +44,14 @@ const Styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+  },
+
+  timer: {
+    textAlign: 'center',
+    top: 250,
+    fontWeight: '400',
+    fontSize: 50,
+    color: '#3B3355',
   },
 });
 

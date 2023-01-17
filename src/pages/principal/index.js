@@ -20,6 +20,7 @@ export default function Principal() {
         </TouchableOpacity>
       </View>
 
+      <Text style={Styles.timer}>00:00</Text>
       <Text style={Styles.text}>Pronto para começar</Text>
 
       <TouchableOpacity style={Styles.botao}>

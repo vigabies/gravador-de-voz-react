@@ -40,8 +40,8 @@ export default function StackNavegation() {
           ),
         }}
       />
-      
-      <Stack.Screen name="Tela2" component={Tela2}/>
+
+      <Stack.Screen name="Tela2" component={Tela2} />
     </Stack.Navigator>
   );
 }
