@@ -6,7 +6,6 @@ const Styles = StyleSheet.create({
   },
 
   botao: {
-    backgroundColor: '#95a5ba',
     borderRadius: 100,
     position: 'absolute',
     width: 87,

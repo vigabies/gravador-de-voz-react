@@ -4,6 +4,7 @@ import {Navegar} from './functions';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function Principal() {
   const navegation = useNavigation();
@@ -23,9 +24,11 @@ export default function Principal() {
       <Text style={Styles.timer}>00:00</Text>
       <Text style={Styles.text}>Pronto para começar</Text>
 
-      <TouchableOpacity style={Styles.botao}>
-        <Icon name="microphone" size={50} color="#fff" />
-      </TouchableOpacity>
+      <LinearGradient style={Styles.botao} colors={['#BFCDE0', '#5D5D81']}>
+        <TouchableOpacity>
+          <Icon name="microphone" size={50} color="#fff" />
+        </TouchableOpacity>
+      </LinearGradient>
     </View>
   );
 }

@@ -6,6 +6,7 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {TouchableOpacity, Text} from 'react-native';
 import Styles from './styles';
 import {useNavigation} from '@react-navigation/native';
+import LinearGradient from 'react-native-linear-gradient';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,14 +35,24 @@ export default function StackNavegation() {
           ),
           //adicionar um botao na direita
           headerRight: () => (
-            <TouchableOpacity onPress={() => navegar()} style={Styles.botao}>
-              <Text style={Styles.text}>Seja Pro</Text>
-            </TouchableOpacity>
+            <LinearGradient
+              style={Styles.botao}
+              colors={['#BFCDE0', '#5D5D81']}>
+              <TouchableOpacity onPress={() => navegar()} style={Styles.botao}>
+                <Text style={Styles.text}>Seja Pro</Text>
+              </TouchableOpacity>
+            </LinearGradient>
           ),
         }}
       />
 
-      <Stack.Screen name="Tela2" component={Tela2} />
+      <Stack.Screen
+        name="Tela2"
+        component={Tela2}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 }
