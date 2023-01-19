@@ -2,184 +2,181 @@ import {StyleSheet} from 'react-native';
 const Styles = StyleSheet.create({
   //SEMPRE POR FLEX
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     flex: 1,
   },
 
+  linearGradient: {
+    height: 370,
+    width: 500,
+    opacity: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
   img: {
-    opacity: 0.8,
-    flex: 0.5,
-    height: 380,
-    width: 420,
+    height: 370,
+    width: 360,
   },
 
-  botao: {
-    borderRadius: 6,
-    position: 'absolute',
-    width: 335,
-    height: 40,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-    bottom: 85,
+  icon: {
+    flexDirection: 'row-reverse',
+    top: '-6%',
+    left: '23%',
   },
 
-  text: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: '650',
+  icon2: {
+    top: 188,
+    left: -180,
   },
 
-  icone: {
-    alignItems: 'flex-end',
-  },
-
-  botao2: {
+  mic: {
     borderRadius: 100,
-    position: 'absolute',
-    width: 45,
-    height: 45,
+    backgroundColor: '#95a5ba',
+    height: 50,
+    width: 50,
     justifyContent: 'center',
     alignItems: 'center',
-    bottom: 470,
-    left: 65,
+    top: '44%',
+    left: '-40%',
   },
 
   easy: {
     color: '#BFCDE0',
-    fontSize: 30,
-    fontWeight: '600',
-    position: 'absolute',
-    left: 120,
-    top: 298,
+    left: '-10%',
+    fontSize: 36,
+    top: '30%',
+    fontWeight: '500',
   },
 
-  rec: {
+  recorder: {
     color: '#3B3355',
-    fontSize: 30,
+    fontSize: 36,
+    fontWeight: '800',
+    top: 62,
+    left: 35,
   },
 
-  quadrado: {
-    position: 'absolute',
-    width: 120,
-    height: 121,
-    left: -109,
-    top: 349,
-    backgroundColor: '#D9D9D9',
-    borderRadius: 5,
+  rectangle: {
+    top: 150,
+    borderRadius: 100,
+    color: 'black',
   },
 
-  quadrado2: {
-    position: 'absolute',
-    width: 120,
-    height: 121,
-    left: 21,
-    top: 349,
-    backgroundColor: '#D9D9D9',
-    borderRadius: 5,
-  },
-
-  quadrado3: {
-    position: 'absolute',
-    width: 121,
-    height: 121,
-    left: 151,
-    top: 349,
-    backgroundColor: '#D9D9D9',
-    borderRadius: 5,
-  },
-
-  quadrado4: {
-    position: 'absolute',
-    width: 120,
-    height: 121,
-    left: 282,
-    top: 349,
-    backgroundColor: '#D9D9D9',
-    borderRadius: 5,
-  },
-
-  mensal: {
-    backgroundColor: '#fff',
-    borderColor: '#5D5D81',
-    borderWidth: 1,
-    top: 475,
-    width: 97,
-    height: 107,
-    left: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  valor: {
+  text3: {
     fontSize: 30,
     height: 36,
     color: '#5D5D81',
     fontWeight: '700',
     lineHeight: 36,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
-  tempo: {
+  text4: {
     fontSize: 25,
     fontWeight: '400',
     lineHeight: 30,
     color: '#5D5D81',
+    textAlign: 'center',
   },
 
-  anual: {
-    backgroundColor: '#fff',
-    borderColor: '#5D5D81',
-    borderWidth: 1,
-    top: 369,
-    width: 97,
-    height: 107,
-    left: 144,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  vital: {
-    backgroundColor: '#fff',
-    borderColor: '#5D5D81',
-    borderWidth: 1,
-    top: 260,
-    width: 113,
-    height: 120,
-    left: 268,
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  trinta: {
-    color: '#6b6385',
-    fontSize: 20,
-    lineHeight: 24,
-    fontWeight: '500',
-  },
-
-  vinte: {
-    fontSize: 35,
-    fontWeight: '700',
-    lineHeight: 42,
+  text5: {
     color: '#3B3355',
+    fontWeight: '700',
+    fontSize: 34,
   },
 
   vitalicio: {
-    fontSize: 26,
-    fontWeight: '40',
-    lineHeight: 31.2,
     color: '#3B3355',
+    fontWeight: '400',
+    fontSize: 24,
+    lineHeight: 31.2,
   },
 
-  linearGradient: {
-    height: 380,
-    width: 420,
-    opacity: 10,
-    justifyContent: 'center',
+  text: {
+    color: 'black',
+    fontSize: 10,
+    left: 15,
+    margin: 3,
+    width: 380,
+    top: -10,
+    textAlign: 'justify',
+    lineHeight: 15,
+    justifyContent: 'flex-end',
+  },
+
+  text2: {
+    color: 'white',
+    fontSize: 20,
+  },
+
+  text6: {
+    color: '#918DA0',
+    fontWeight: '500',
+    fontSize: 20,
+  },
+
+  linha2: {
+    top: '14%',
     alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#5D5D81',
+    left: 20,
+    width: 97,
+    borderRadius: 10,
+    height: 107,
+  },
+
+  linha3: {
+    top: '-1.2%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#5D5D81',
+    left: 134,
+    width: 97,
+    borderRadius: 10,
+    height: 107,
+  },
+
+  linha4: {
+    top: '-17%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 3,
+    borderColor: '#5D5D81',
+    left: 245,
+    width: 109,
+    borderRadius: 10,
+    height: 120,
+  },
+
+  linhav: {
+    backgroundColor: '#918DA0',
+    width: 60,
+    height: 2,
+    left: '74%',
+    top: '-30.9%',
+    transform: [{rotateY: '1deg'}, {rotateZ: '15deg'}],
+  },
+
+  touch: {
+    top: -25,
+    left: 20,
+    width: 380,
+    color: 'black',
+    alignItems: 'center',
+    backgroundColor: '#D3D3D3',
+    padding: 5,
+    borderRadius: 13,
+  },
+
+  linha: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    top: -50,
   },
 });
 

@@ -2,6 +2,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Principal from '../pages/principal';
 import Tela2 from '../pages/tela2';
+import Tela3 from '../pages/tela3';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {TouchableOpacity, Text} from 'react-native';
 import Styles from './styles';
@@ -13,8 +14,8 @@ const Stack = createNativeStackNavigator();
 export default function StackNavegation() {
   //para funcionar o botao la embaixo temos que fazer a const
   const navigation = useNavigation();
-  const navegar = () => {
-    navigation.navigate('Tela2');
+  const navegar = tela => {
+    navigation.navigate(tela, {});
   };
 
   return (
@@ -29,7 +30,7 @@ export default function StackNavegation() {
           headerTintColor: '#3B3355',
           //adicionar um icone na esquerda
           headerLeft: () => (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navegar('Configurações')}>
               <EvilIcons name="navicon" color="#3B3355" size={35} />
             </TouchableOpacity>
           ),
@@ -38,7 +39,9 @@ export default function StackNavegation() {
             <LinearGradient
               style={Styles.botao}
               colors={['#BFCDE0', '#5D5D81']}>
-              <TouchableOpacity onPress={() => navegar()} style={Styles.botao}>
+              <TouchableOpacity
+                onPress={() => navegar('Tela2')}
+                style={Styles.botao}>
                 <Text style={Styles.text}>Seja Pro</Text>
               </TouchableOpacity>
             </LinearGradient>
@@ -51,6 +54,17 @@ export default function StackNavegation() {
         component={Tela2}
         options={{
           headerShown: false,
+        }}
+      />
+
+      <Stack.Screen
+        name="Configurações"
+        component={Tela3}
+        options={{
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          headerTintColor: '#3B3355',
         }}
       />
     </Stack.Navigator>
