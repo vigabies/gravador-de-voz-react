@@ -16,13 +16,13 @@ const Styles = StyleSheet.create({
 
   img: {
     height: 370,
-    width: 360,
+    width: 412,
   },
 
   icon: {
     flexDirection: 'row-reverse',
     top: '-6%',
-    left: '23%',
+    left: '37%',
   },
 
   icon2: {
@@ -95,20 +95,22 @@ const Styles = StyleSheet.create({
   },
 
   text: {
-    color: 'black',
+    color: '#000',
     fontSize: 10,
     left: 15,
     margin: 3,
     width: 380,
-    top: -10,
+    top: '-9.9%',
     textAlign: 'justify',
-    lineHeight: 15,
+    lineHeight: 12,
     justifyContent: 'flex-end',
+    fontWeight: '300',
   },
 
   text2: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 25,
+    fontWeight: '600',
   },
 
   text6: {
@@ -118,36 +120,36 @@ const Styles = StyleSheet.create({
   },
 
   linha2: {
-    top: '14%',
+    top: '12.4%',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: '#5D5D81',
-    left: 20,
+    left: 25,
     width: 97,
     borderRadius: 10,
     height: 107,
   },
 
   linha3: {
-    top: '-1.2%',
+    top: '-1%',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: '#5D5D81',
-    left: 134,
+    left: 146,
     width: 97,
     borderRadius: 10,
     height: 107,
   },
 
   linha4: {
-    top: '-17%',
+    top: '-15%',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 3,
     borderColor: '#5D5D81',
-    left: 245,
+    left: 269,
     width: 109,
     borderRadius: 10,
     height: 120,
@@ -157,26 +159,25 @@ const Styles = StyleSheet.create({
     backgroundColor: '#918DA0',
     width: 60,
     height: 2,
-    left: '74%',
-    top: '-30.9%',
+    left: '71%',
+    top: '-27.4%',
     transform: [{rotateY: '1deg'}, {rotateZ: '15deg'}],
   },
 
   touch: {
-    top: -25,
+    top: '-10%',
     left: 20,
     width: 380,
-    color: 'black',
     alignItems: 'center',
-    backgroundColor: '#D3D3D3',
-    padding: 5,
-    borderRadius: 13,
+    padding: 8,
+    borderRadius: 6,
   },
 
   linha: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    top: -50,
+    top: '-26%',
+    alignItems: 'center',
   },
 });
 

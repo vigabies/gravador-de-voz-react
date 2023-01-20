@@ -113,13 +113,13 @@ export default function Tela2() {
 
       <View style={Styles.linha}>
         <TouchableOpacity>
-          <Entypo name="circle" size={15} color={'#5D5D81'} />
+          <Entypo name="circle" size={14} color={'#5D5D81'} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Entypo name="circle" size={15} color={'#5D5D81'} />
+          <Entypo name="circle" size={14} color={'#5D5D81'} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Entypo name="circle" size={15} color={'#5D5D81'} />
+          <Entypo name="circle" size={14} color={'#5D5D81'} />
         </TouchableOpacity>
       </View>
 

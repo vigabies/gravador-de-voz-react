@@ -1,6 +1,7 @@
 import {View, Text, TouchableOpacity} from 'react-native';
 import Styles from './styles';
 import {Navegar} from './functions';
+import Tela4 from '../tela4';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -8,6 +9,9 @@ import LinearGradient from 'react-native-linear-gradient';
 
 export default function Principal() {
   const navegation = useNavigation();
+  const navegar = tela => {
+    navegation.navigate(tela, {});
+  };
 
   return (
     <View style={Styles.container}>
@@ -17,7 +21,9 @@ export default function Principal() {
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Text style={Styles.text3}>Ouvir</Text>
+          <Text style={Styles.text3} onPress={() => navegar('Tela4')}>
+            Ouvir
+          </Text>
         </TouchableOpacity>
       </View>
 

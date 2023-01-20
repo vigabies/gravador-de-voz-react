@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Principal from '../pages/principal';
 import Tela2 from '../pages/tela2';
 import Tela3 from '../pages/tela3';
+import Tela4 from '../pages/tela4';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import {TouchableOpacity, Text} from 'react-native';
 import Styles from './styles';
@@ -67,6 +68,8 @@ export default function StackNavegation() {
           headerTintColor: '#3B3355',
         }}
       />
+
+      <Stack.Screen name="Tela4" component={Tela4} />
     </Stack.Navigator>
   );
 }
