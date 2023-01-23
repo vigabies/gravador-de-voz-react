@@ -29,7 +29,7 @@ export default function Tela4() {
     <View style={Styles.container}>
       <View style={Styles.header}>
         <TouchableOpacity>
-          <Text style={Styles.letra}>Gravar</Text>
+          <Text style={Styles.letra2}>Gravar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity>
@@ -48,10 +48,18 @@ export default function Tela4() {
       <LinearGradient style={Styles.bottom} colors={['#BFCDE0', '#5D5D81']}>
         <View style={Styles.linha2}>
           <Text style={Styles.text}>00:00</Text>
-
-          <Slider style={Styles.slider} />
-
-          <Text style={Styles.text}>00:45</Text>
+          <Slider
+            containerStyle={{flex: 1, marginRight: '6%', marginLeft: '6%'}}
+            thumbTintColor="#FFFFFF"
+            value={2}
+            minimumValue={1}
+            maximumValue={5}
+            step={2}
+            trackClickable={true}
+            maximumTrackTintColor="#e9f0ef"
+            minimumTrackTintColor="#fff"
+          />
+          <Text style={Styles.texto}>00:45</Text>
         </View>
 
         <View style={Styles.linha}>

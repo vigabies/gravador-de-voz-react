@@ -19,6 +19,13 @@ const Styles = StyleSheet.create({
     fontSize: 17,
   },
 
+  letra2: {
+    fontWeight: '500',
+    fontSize: 17,
+    color: '#3B3355',
+    opacity: 0.5,
+  },
+
   body: {
     flex: 5,
     backgroundColor: '#fff',
@@ -33,6 +40,15 @@ const Styles = StyleSheet.create({
     fontSize: 12,
     borderWidth: 1,
     borderColor: '#fff',
+    marginLeft: '5%',
+  },
+
+  texto: {
+    color: '#fff',
+    fontSize: 12,
+    borderWidth: 1,
+    borderColor: '#fff',
+    marginRight: '5%',
   },
 
   linha: {
@@ -49,8 +65,9 @@ const Styles = StyleSheet.create({
   },
 
   linha3: {
-    marginLeft: '4%',
-    marginRight: '4%',
+    marginLeft: '6%',
+    marginRight: '10%',
+    marginTop: '6%',
   },
 
   linha4: {
@@ -58,12 +75,20 @@ const Styles = StyleSheet.create({
   },
 
   linha5: {
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
+    marginRight: '44%',
+  },
+
+  linhav: {
+    backgroundColor: '#BFCDE0',
+    height: 1,
+    marginTop: '2%',
+    width: '108%',
   },
 
   title: {
     fontSize: 20,
-    fontWeight: '400',
+    fontWeight: '500',
     lineHeight: 24,
     color: '#000000',
   },
@@ -74,13 +99,13 @@ const Styles = StyleSheet.create({
     color: '#000000',
     lineHeight: 12,
     marginRight: 10,
-    marginBottom: 5,
   },
 
   time: {
     fontSize: 12,
     fontWeight: '400',
     color: '#000000',
+    marginTop: '-3%',
   },
 
   tag: {
@@ -92,18 +117,13 @@ const Styles = StyleSheet.create({
     width: 40,
     textAlign: 'center',
     marginRight: 10,
+    marginTop: '-3%',
   },
 
   once: {
     fontSize: 20,
     fontWeight: '400',
     color: '#fff',
-  },
-
-  slider: {
-    margin: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 
