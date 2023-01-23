@@ -25,18 +25,21 @@ export default function Tela2() {
 
   return (
     <View style={Styles.container}>
-      <ImageBackground
-        style={Styles.img}
-        source={require('../assets/images/woman.png')}>
-        <LinearGradient
-          colors={['transparent', '#fff']}
-          start={{x: 1, y: 0}}
-          end={{x: 1, y: 1}}
-          style={Styles.linearGradient}>
+      <View style={Styles.img}>
+        <ImageBackground
+          style={Styles.img}
+          source={require('../assets/images/woman.png')}>
           <TouchableOpacity onPress={() => navegar()} style={Styles.icon}>
             <EvilIcons name="close-o" color={'#fff'} size={45} />
           </TouchableOpacity>
+          <LinearGradient
+            colors={['transparent', '#fff']}
+            start={{x: 1, y: 0}}
+            end={{x: 1, y: 1}}
+            style={Styles.linearGradient}></LinearGradient>
+        </ImageBackground>
 
+        <View style={Styles.linha}>
           <LinearGradient style={Styles.mic} colors={['#BFCDE0', '#5D5D81']}>
             <TouchableOpacity>
               <FontAwesome name="microphone" size={27} color="white" />
@@ -46,100 +49,65 @@ export default function Tela2() {
           <Text style={Styles.easy}>
             Easy<Text style={Styles.recorder}>Recorder</Text>
           </Text>
+        </View>
+      </View>
+
+      <View style={Styles.quadrados}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            height: 80,
+            top: '3%',
+          }}>
+          <View
+            style={{
+              backgroundColor: '#D9D9D9',
+              flex: 0.3,
+              borderRadius: 5,
+              height: 125,
+              marginRight: '3%',
+            }}
+          />
 
           <View
             style={{
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              height: 75,
-              top: 120,
-            }}>
-            <View
-              style={{
-                backgroundColor: '#D9D9D9',
-                flex: 0.2,
-                borderRadius: 5,
-                height: '150%',
-                left: -62,
-              }}
-            />
-            <View
-              style={{
-                backgroundColor: '#D9D9D9',
-                flex: 0.3,
-                height: '150%',
-                borderRadius: 5,
-                left: -45,
-              }}
-            />
-            <View
-              style={{
-                backgroundColor: '#D9D9D9',
-                flex: 0.3,
-                height: '150%',
-                borderRadius: 5,
-                left: -23,
-              }}
-            />
-            <View
-              style={{
-                backgroundColor: '#D9D9D9',
-                flex: 0.6,
-                height: '150%',
-                borderRadius: 5,
-              }}
-            />
-          </View>
-        </LinearGradient>
-      </ImageBackground>
+              backgroundColor: '#D9D9D9',
+              flex: 0.4,
+              borderRadius: 5,
+              height: 125,
+              marginRight: '3%',
+            }}
+          />
 
-      <View style={Styles.linha2}>
-        <Text style={Styles.text3}>4,99</Text>
-        <Text style={Styles.text4}>Mensal</Text>
+          <View
+            style={{
+              backgroundColor: '#D9D9D9',
+              flex: 0.4,
+              borderRadius: 5,
+              height: 125,
+              marginRight: '3%',
+            }}
+          />
+
+          <View
+            style={{
+              backgroundColor: '#D9D9D9',
+              flex: 0.3,
+              borderRadius: 5,
+              height: 125,
+            }}
+          />
+        </View>
       </View>
 
-      <View style={Styles.linha3}>
-        <Text style={Styles.text3}>15,99</Text>
-        <Text style={Styles.text4}>Anual</Text>
+      <View style={Styles.valores}>
+        <Text></Text>
       </View>
 
-      <View style={Styles.linha4}>
-        <Text style={Styles.text6}>39,99</Text>
-        <Text style={Styles.text5}>29,99</Text>
-        <Text style={Styles.vitalicio}>Vitalício</Text>
+      <View style={Styles.botao}>
+        <Text></Text>
       </View>
-
-      <View style={Styles.linhav} />
-
-      <View style={Styles.linha}>
-        <TouchableOpacity>
-          <Entypo name="circle" size={14} color={'#5D5D81'} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Entypo name="circle" size={14} color={'#5D5D81'} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Entypo name="circle" size={14} color={'#5D5D81'} />
-        </TouchableOpacity>
-      </View>
-
-      <LinearGradient style={Styles.touch} colors={['#BFCDE0', '#5D5D81']}>
-        <TouchableOpacity>
-          <Text style={Styles.text2} onPress={() => navegar()}>
-            Continuar
-          </Text>
-        </TouchableOpacity>
-      </LinearGradient>
-
-      <Text style={Styles.text}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </Text>
     </View>
   );
 }
