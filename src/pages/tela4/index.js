@@ -1,14 +1,19 @@
 import {View, Text, TouchableOpacity, FlatList} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Item} from './function';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Foundation from 'react-native-vector-icons/Foundation';
 import Styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import {Slider} from '@miblanchard/react-native-slider';
 
 export default function Tela4() {
+  //o estado vai ser falso pq o que ja tava funcionando o verdadeiro
+  //quando clicar vai para o outro
+  const [play, setPlay] = useState(false);
+
   const ARRAY = [
     {
       id: '1',
@@ -21,22 +26,16 @@ export default function Tela4() {
     },
   ];
 
+  function TouchPlay() {
+    setPlay(!play);
+  }
+
   function renderItem({item}) {
     return <Item data={item} />;
   }
 
   return (
     <View style={Styles.container}>
-      <View style={Styles.header}>
-        <TouchableOpacity>
-          <Text style={Styles.letra2}>Gravar</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text style={Styles.letra}>Ouvir</Text>
-        </TouchableOpacity>
-      </View>
-
       <View style={Styles.body}>
         <FlatList
           data={ARRAY}
@@ -71,8 +70,12 @@ export default function Tela4() {
             <AntDesign name="banckward" size={30} color={'#fff'} />
           </TouchableOpacity>
 
-          <TouchableOpacity>
-            <AntDesign name="play" size={69} color={'#fff'} />
+          <TouchableOpacity onPress={TouchPlay}>
+            {play ? (
+              <Foundation name="pause" size={69} color={'#fff'} />
+            ) : (
+              <AntDesign name="play" size={69} color={'#fff'} />
+            )}
           </TouchableOpacity>
 
           <TouchableOpacity>

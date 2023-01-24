@@ -20,6 +20,7 @@ const Styles = StyleSheet.create({
 
   icon: {
     flexDirection: 'row-reverse',
+    marginTop: '4%',
   },
 
   mic: {

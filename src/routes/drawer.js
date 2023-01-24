@@ -98,12 +98,6 @@ export default function drawer() {
       />
 
       <Drawer.Screen
-        name="Tela4"
-        component={Tela4}
-        options={{drawerItemStyle: {height: 0}}}
-      />
-
-      <Drawer.Screen
         name="TelaAsk"
         component={TelaAsk}
         options={{
