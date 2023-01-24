@@ -4,16 +4,41 @@ const Styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  // -----------------------------------------------------------------------------
+  top: {
+    flex: 0.5,
+  },
 
-  botao: {
-    borderRadius: 100,
-    position: 'absolute',
-    width: 87,
-    height: 87,
-    alignSelf: 'center',
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginTop: '16%',
+  },
+
+  text2: {
+    color: '#3B3355',
+    fontWeight: '500',
+    fontSize: 17,
+  },
+
+  text3: {
+    color: '#3B3355',
+    opacity: 0.5,
+    fontSize: 17,
+    fontWeight: '500',
+  },
+
+  // -----------------------------------------------------------------------------
+  body: {
+    flex: 2,
     justifyContent: 'center',
-    alignItems: 'center',
-    bottom: 65,
+  },
+
+  timer: {
+    textAlign: 'center',
+    fontWeight: '400',
+    fontSize: 50,
+    color: '#3B3355',
   },
 
   text: {
@@ -22,35 +47,24 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
     color: '#3B3355',
     opacity: 0.5,
-    top: 265,
   },
 
-  text2: {
-    color: '#3B3355',
-    fontWeight: '500',
-    fontSize: 17,
-    top: 80,
+  // -----------------------------------------------------------------------------
+
+  bottom: {
+    flex: 1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
   },
 
-  text3: {
-    color: '#3B3355',
-    opacity: 0.5,
-    fontSize: 17,
-    fontWeight: '500',
-    top: 80,
-  },
-
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-  },
-
-  timer: {
-    textAlign: 'center',
-    top: 250,
-    fontWeight: '400',
-    fontSize: 50,
-    color: '#3B3355',
+  botao: {
+    borderRadius: 100,
+    width: 87,
+    height: 87,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

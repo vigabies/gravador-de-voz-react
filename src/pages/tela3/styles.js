@@ -4,15 +4,13 @@ const Styles = StyleSheet.create({
     backgroundColor: '#fff',
     flex: 1,
   },
-
+  // -----------------------------------------------------------------------------
   title: {
     fontSize: 20,
     color: '#BFCDE0',
     fontWeight: '700',
     lineHeight: 24,
     top: '5%',
-    left: '4%',
-    flexDirection: 'column',
     marginBottom: '3%',
   },
 
@@ -21,23 +19,28 @@ const Styles = StyleSheet.create({
     fontWeight: '500',
     color: '#3B3355',
     top: '5%',
-    left: '4%',
-    flexDirection: 'column',
-    justifyContent: 'space-around',
-    marginBottom: '2%',
-  },
-
-  avancado: {
-    top: '5%',
+    marginBottom: '4%',
   },
 
   sub: {
     fontSize: 12,
     fontWeight: '300',
-    flexDirection: 'column',
-    left: '4%',
     marginTop: '1%',
     color: '#3B3355',
+  },
+
+  // -----------------------------------------------------------------------------
+
+  top: {
+    flex: 1,
+    marginTop: '1%',
+    marginLeft: '4%',
+  },
+
+  body: {
+    flex: 1,
+    marginTop: '-25%',
+    marginLeft: '4%',
   },
 });
 

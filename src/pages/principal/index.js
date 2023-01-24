@@ -15,26 +15,32 @@ export default function Principal() {
 
   return (
     <View style={Styles.container}>
-      <View style={Styles.row}>
-        <TouchableOpacity>
-          <Text style={Styles.text2}>Gravar</Text>
-        </TouchableOpacity>
+      <View style={Styles.top}>
+        <View style={Styles.row}>
+          <TouchableOpacity>
+            <Text style={Styles.text2}>Gravar</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity>
-          <Text style={Styles.text3} onPress={() => navegar('Tela4')}>
-            Ouvir
-          </Text>
-        </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={Styles.text3} onPress={() => navegar('Tela4')}>
+              Ouvir
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
-      <Text style={Styles.timer}>00:00</Text>
-      <Text style={Styles.text}>Pronto para começar</Text>
+      <View style={Styles.body}>
+        <Text style={Styles.timer}>00:00</Text>
+        <Text style={Styles.text}>Pronto para começar</Text>
+      </View>
 
-      <LinearGradient style={Styles.botao} colors={['#BFCDE0', '#5D5D81']}>
-        <TouchableOpacity>
-          <Icon name="microphone" size={50} color="#fff" />
-        </TouchableOpacity>
-      </LinearGradient>
+      <View style={Styles.bottom}>
+        <LinearGradient style={Styles.botao} colors={['#BFCDE0', '#5D5D81']}>
+          <TouchableOpacity>
+            <Icon name="microphone" size={50} color="#fff" />
+          </TouchableOpacity>
+        </LinearGradient>
+      </View>
     </View>
   );
 }
