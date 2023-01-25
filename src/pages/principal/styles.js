@@ -66,6 +66,80 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  modalView: {
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    padding: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 30,
+  },
+
+  modaltext: {
+    fontWeight: '700',
+    color: '#000',
+    fontSize: 18,
+    marginBottom: '4%',
+  },
+
+  cancelar: {
+    borderRadius: 6,
+    height: 38,
+    width: 78,
+    textAlign: 'center',
+    marginLeft: '4%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  textcancelar: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+
+  linhamodal: {
+    flexDirection: 'row',
+    marginTop: '4%',
+  },
+
+  salvar: {
+    borderRadius: 6,
+    height: 38,
+    width: 160,
+    marginRight: '4%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  textsalvar: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+
+  input: {
+    marginBottom: '4%',
+    marginTop: '4%',
+    borderWidth: 1,
+    borderColor: '#3B3355',
+    padding: 10,
+    borderRadius: 5,
+    width: 262,
+    height: 47,
+    color: '#000',
+  },
+
+  //a sombra ali é no background, o A no rgbA serve para definir a opacidade
+  modalcontainer: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default Styles;

@@ -27,8 +27,9 @@ const Styles = StyleSheet.create({
   },
 
   body: {
-    flex: 5,
+    flex: 4,
     backgroundColor: '#fff',
+    marginTop: '-28%',
   },
 
   bottom: {
@@ -67,7 +68,6 @@ const Styles = StyleSheet.create({
   linha3: {
     marginLeft: '6%',
     marginRight: '10%',
-    marginTop: '6%',
   },
 
   linha4: {
