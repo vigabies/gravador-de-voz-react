@@ -12,9 +12,12 @@ import Tela4 from '../tela4';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
+import SelectDropdown from 'react-native-select-dropdown';
 
 export default function Principal() {
+  const opcao = ['Sem Tag', 'Estudo', 'Faculdade', 'Minhas Músicas'];
   const [modalVisible, setModalVisible] = useState(false);
   const [gravar, setGravar] = useState(true);
   const navegation = useNavigation();
@@ -67,9 +70,34 @@ export default function Principal() {
                       maxLength={50}
                       placeholder="Nome"></TextInput>
 
-                    <TextInput
-                      style={Styles.input}
-                      placeholder="Tag"></TextInput>
+                    <SelectDropdown
+                      data={opcao}
+                      onSelect={(selectedItem, index) => {
+                        console.log(selectedItem, index);
+                      }}
+                      defaultButtonText={'Tag'}
+                      buttonTextAfterSelection={(selectedItem, index) => {
+                        return selectedItem;
+                      }}
+                      rowTextForSelection={(item, index) => {
+                        return item;
+                      }}
+                      buttonStyle={Styles.dropdown1BtnStyle}
+                      buttonTextStyle={Styles.textDrop}
+                      renderDropdownIcon={isOpened => {
+                        return (
+                          <AntDesign
+                            name={isOpened ? 'caretup' : 'caretdown'}
+                            color={'#3B3355'}
+                            size={18}
+                          />
+                        );
+                      }}
+                      dropdownIconPosition={'right'}
+                      dropdownStyle={Styles.colorClick}
+                      rowStyle={Styles.corLinha}
+                      rowTextStyle={Styles.corTextLinha}
+                    />
 
                     <View style={Styles.linhamodal}>
                       <LinearGradient
@@ -86,7 +114,6 @@ export default function Principal() {
                           <Text style={Styles.textcancelar}>Cancelar</Text>
                         </LinearGradient>
                       </TouchableOpacity>
-
                     </View>
                   </View>
                 </View>

@@ -130,7 +130,9 @@ const Styles = StyleSheet.create({
     borderRadius: 5,
     width: 262,
     height: 47,
-    color: '#000',
+    color: '#3B3355',
+    fontSize: 16,
+    fontWeight: '400',
   },
 
   //a sombra ali é no background, o A no rgbA serve para definir a opacidade
@@ -139,6 +141,41 @@ const Styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  // -----------------------------------------------------------------------------
+
+  dropdown1BtnStyle: {
+    width: 262,
+    height: 47,
+    backgroundColor: '#FFF',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#3B3355',
+  },
+
+  textDrop: {
+    color: '#3B3355',
+    textAlign: 'left',
+    fontSize: 16,
+    fontWeight: '400',
+  },
+
+  colorClick: {
+    backgroundColor: '#ddd',
+  },
+
+  corLinha: {
+    backgroundColor: '#fff',
+    borderBottomColor: '#fff',
+  },
+
+  corTextLinha: {
+    color: '#000000',
+    textAlign: 'left',
+    marginLeft: '4%',
+    fontSize: 16,
+    fontWeight: '400',
   },
 });
 
