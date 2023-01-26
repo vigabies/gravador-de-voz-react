@@ -27,7 +27,6 @@ const Styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: '500',
   },
-
   // -----------------------------------------------------------------------------
   body: {
     flex: 2,
@@ -58,6 +57,13 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
   },
 
+  bottom2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
+  },
+
   botao: {
     borderRadius: 100,
     width: 87,
@@ -70,17 +76,18 @@ const Styles = StyleSheet.create({
   modalView: {
     backgroundColor: '#fff',
     borderRadius: 5,
-    padding: 20,
+    padding: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    marginHorizontal: 30,
+    width: 330,
+    height: 310,
   },
 
   modaltext: {
     fontWeight: '700',
     color: '#000',
-    fontSize: 18,
-    marginBottom: '4%',
+    fontSize: 20,
+    marginBottom: '10%',
   },
 
   cancelar: {
@@ -102,7 +109,15 @@ const Styles = StyleSheet.create({
 
   linhamodal: {
     flexDirection: 'row',
-    marginTop: '4%',
+    marginTop: '10%',
+  },
+
+  //a sombra ali é no background, o A no rgbA serve para definir a opacidade
+  modalcontainer: {
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   salvar: {
@@ -122,8 +137,7 @@ const Styles = StyleSheet.create({
   },
 
   input: {
-    marginBottom: '4%',
-    marginTop: '4%',
+    marginBottom: '10%',
     borderWidth: 1,
     borderColor: '#3B3355',
     padding: 10,
@@ -133,14 +147,6 @@ const Styles = StyleSheet.create({
     color: '#3B3355',
     fontSize: 16,
     fontWeight: '400',
-  },
-
-  //a sombra ali é no background, o A no rgbA serve para definir a opacidade
-  modalcontainer: {
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 
   // -----------------------------------------------------------------------------
@@ -176,6 +182,83 @@ const Styles = StyleSheet.create({
     marginLeft: '4%',
     fontSize: 16,
     fontWeight: '400',
+  },
+  // -----------------------------------------------------------------------------
+  modalContainer2: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+
+  modalCenter: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+
+  modal2View: {
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    padding: 30,
+    marginHorizontal: 30,
+    width: 330,
+    height: 310,
+  },
+
+  parabens: {
+    textAlign: 'center',
+    color: '#000',
+    fontWeight: '700',
+    fontSize: 20,
+    marginTop: '3%',
+    marginBottom: '6%',
+    lineHeight: 24,
+  },
+
+  avaliacao: {
+    textAlign: 'center',
+    color: '#000',
+    fontWeight: '400',
+    fontSize: 15,
+    marginTop: '5%',
+    marginBottom: '6%',
+    lineHeight: 18,
+  },
+
+  avaliar: {
+    borderRadius: 6,
+    height: 42,
+    width: 260,
+    textAlign: 'center',
+    marginLeft: '4%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  textAvaliar: {
+    color: '#fff',
+    fontWeight: '600',
+    fontSize: 19,
+  },
+
+  closeModal: {
+    borderRadius: 100,
+    width: 30,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  linhaStar: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: '9%',
+  },
+
+  position: {
+    position: 'absolute',
+    left: 310,
+    top: -10,
   },
 });
 

@@ -15,9 +15,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
 import SelectDropdown from 'react-native-select-dropdown';
+import InAppReview from 'react-native-in-app-review';
 
 export default function Principal() {
   const opcao = ['Sem Tag', 'Estudo', 'Faculdade', 'Minhas Músicas'];
+
+  const [defaultRating, setDefaultRating] = useState(2);
+  const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5]);
+
   const [modalVisible, setModalVisible] = useState(false);
   const [gravar, setGravar] = useState(true);
   const navegation = useNavigation();
@@ -28,6 +33,27 @@ export default function Principal() {
   function toggleTela(teste) {
     setGravar(teste);
   }
+
+  const RatingBar = () => {
+    return (
+      <View style={Styles.linhaStar}>
+        {maxRating.map((item, key) => {
+          return (
+            <TouchableOpacity
+              activeOpacity={0.7}
+              key={item}
+              onPress={() => setDefaultRating(item)}>
+              <AntDesign
+                name={item <= defaultRating ? 'star' : 'staro'}
+                size={40}
+                color="#BFCDE0"
+              />
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+    );
+  };
 
   return (
     <View style={Styles.container}>
@@ -68,7 +94,8 @@ export default function Principal() {
                     <TextInput
                       style={Styles.input}
                       maxLength={50}
-                      placeholder="Nome"></TextInput>
+                      placeholder="Nome"
+                    />
 
                     <SelectDropdown
                       data={opcao}
@@ -119,6 +146,52 @@ export default function Principal() {
                 </View>
               </TouchableWithoutFeedback>
             </Modal>
+
+            <View style={Styles.modalContainer2}>
+              <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                  setModalVisible(!modalVisible);
+                }}>
+                <View style={Styles.modalCenter}>
+                  <View style={Styles.modal2View}>
+                    <View style={Styles.position}>
+                      <TouchableOpacity
+                        onPress={() => setModalVisible(!modalVisible)}>
+                        <LinearGradient
+                          style={Styles.closeModal}
+                          colors={['#BFCDE0', '#5D5D81']}>
+                          <AntDesign name="close" size={20} color="#fff" />
+                        </LinearGradient>
+                      </TouchableOpacity>
+                    </View>
+
+                    <Text style={Styles.parabens}>
+                      Parabéns! Você gravou seu primeiro áudio!
+                    </Text>
+
+                    <View>
+                      <Text style={Styles.avaliacao}>
+                        Nos avalie com 5 estrelas se estiver gostando do
+                        aplicativo!
+                      </Text>
+
+                      <RatingBar />
+
+                      <TouchableOpacity>
+                        <LinearGradient
+                          style={Styles.avaliar}
+                          colors={['#BFCDE0', '#5D5D81']}>
+                          <Text style={Styles.textAvaliar}>Avaliar</Text>
+                        </LinearGradient>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </View>
+              </Modal>
+            </View>
 
             <TouchableOpacity
               style={[Styles.button, Styles.buttonOpen]}

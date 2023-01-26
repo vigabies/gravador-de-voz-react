@@ -79,5 +79,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginLeft: -20,
   },
+
+  arrow: {
+    marginLeft: '10%',
+  },
 });
 export default styles;
