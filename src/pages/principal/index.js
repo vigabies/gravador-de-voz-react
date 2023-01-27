@@ -5,6 +5,7 @@ import {
   Modal,
   TextInput,
   TouchableWithoutFeedback,
+  Alert,
 } from 'react-native';
 import Styles from './styles';
 import {Navegar} from './functions';
@@ -19,12 +20,11 @@ import InAppReview from 'react-native-in-app-review';
 
 export default function Principal() {
   const opcao = ['Sem Tag', 'Estudo', 'Faculdade', 'Minhas Músicas'];
-
-  const [defaultRating, setDefaultRating] = useState(2);
+  const [defaultRating, setDefaultRating] = useState(0);
   const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5]);
-
   const [modalVisible, setModalVisible] = useState(false);
   const [gravar, setGravar] = useState(true);
+
   const navegation = useNavigation();
   const navegar = tela => {
     navegation.navigate(tela, {});
@@ -180,7 +180,20 @@ export default function Principal() {
 
                       <RatingBar />
 
-                      <TouchableOpacity>
+                      {/* Default é as estrelas selecionadas, se as estrelas for maior que 4
+                         vai aparecer o console, se nao, ele fecha o modal*/}
+
+                      <TouchableOpacity
+                        onPress={() => {
+                          if (defaultRating >= 4) {
+                            InAppReview.RequestInAppReview();
+                            console.log(defaultRating);
+                            setModalVisible(!modalVisible);
+                          } else {
+                            setModalVisible(!modalVisible);
+                            Alert.alert('Obrigada pela avaliação!');
+                          }
+                        }}>
                         <LinearGradient
                           style={Styles.avaliar}
                           colors={['#BFCDE0', '#5D5D81']}>

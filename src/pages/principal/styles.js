@@ -71,6 +71,7 @@ const Styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: '4%',
   },
 
   modalView: {
