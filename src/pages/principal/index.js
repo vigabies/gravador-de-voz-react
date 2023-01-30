@@ -6,6 +6,8 @@ import {
   TextInput,
   TouchableWithoutFeedback,
   Alert,
+  PermissionsAndroid,
+  Platform,
 } from 'react-native';
 import Styles from './styles';
 import {Navegar} from './functions';
@@ -14,16 +16,96 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
 import LinearGradient from 'react-native-linear-gradient';
 import SelectDropdown from 'react-native-select-dropdown';
 import InAppReview from 'react-native-in-app-review';
+import AudioRecorderPlayer from 'react-native-audio-recorder-player';
+
+const audioRecorderPlayer = new AudioRecorderPlayer();
 
 export default function Principal() {
   const opcao = ['Sem Tag', 'Estudo', 'Faculdade', 'Minhas Músicas'];
   const [defaultRating, setDefaultRating] = useState(0);
   const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5]);
   const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisibleTwo, setModalVisibleTwo] = useState(false);
   const [gravar, setGravar] = useState(true);
+
+  const [frase, setFrase] = useState({
+    inicio: 'Pronto para começar',
+    grav: 'Gravando',
+  });
+
+  // -------------------------GRAVANDO----------------------------
+  const [tempo, setTempo] = useState({
+    recordSecs: 0,
+    recordTime: '00:00:00',
+  });
+  const [gravando, setGravando] = useState(false);
+
+  async function onStartRecord() {
+    setGravando(true);
+
+    // o if é a permissão para gravar audio.
+
+    if (Platform.OS === 'android') {
+      try {
+        const grants = await PermissionsAndroid.requestMultiple([
+          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+          PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+          PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
+        ]);
+
+        console.log('write external stroage', grants);
+
+        if (
+          grants['android.permission.WRITE_EXTERNAL_STORAGE'] ===
+            PermissionsAndroid.RESULTS.GRANTED &&
+          grants['android.permission.READ_EXTERNAL_STORAGE'] ===
+            PermissionsAndroid.RESULTS.GRANTED &&
+          grants['android.permission.RECORD_AUDIO'] ===
+            PermissionsAndroid.RESULTS.GRANTED
+        ) {
+          console.log('Permissions granted');
+        } else {
+          console.log('All required permissions not granted');
+          return;
+        }
+      } catch (err) {
+        console.warn(err);
+        return;
+      }
+    }
+
+    //o e puxa as informações e retorna para a devida função
+
+    const result = await audioRecorderPlayer.startRecorder();
+    audioRecorderPlayer.addRecordBackListener(e => {
+      setTempo({
+        recordSecs: e.currentPosition,
+        recordTime: audioRecorderPlayer.mmssss(Math.floor(e.currentPosition)),
+      });
+      return;
+    });
+    console.log(result);
+  }
+
+  // o async significa que nossa função vai retornar um de cada vez, colocamos
+  // ele na frente para o await funcionar
+
+  async function onStopRecord() {
+    setGravando(false);
+    const result = await audioRecorderPlayer.stopRecorder();
+    audioRecorderPlayer.removeRecordBackListener();
+    setTempo({
+      recordSecs: 0,
+      recordTime: tempo.recordTime,
+    });
+    console.log(result);
+  }
+
+  // -------------------------------------------------------------
 
   const navegation = useNavigation();
   const navegar = tela => {
@@ -74,8 +156,10 @@ export default function Principal() {
       ) : (
         <>
           <View style={Styles.body}>
-            <Text style={Styles.timer}>00:00</Text>
-            <Text style={Styles.text}>Pronto para começar</Text>
+            <Text style={Styles.timer}>{tempo.recordTime}</Text>
+            <Text style={Styles.text}>
+              {gravando ? frase.grav : frase.inicio}
+            </Text>
           </View>
 
           <View style={Styles.bottom}>
@@ -127,11 +211,14 @@ export default function Principal() {
                     />
 
                     <View style={Styles.linhamodal}>
-                      <LinearGradient
-                        style={Styles.salvar}
-                        colors={['#BFCDE0', '#5D5D81']}>
-                        <Text style={Styles.textsalvar}>Salvar</Text>
-                      </LinearGradient>
+                      <TouchableOpacity
+                        onPress={() => setModalVisibleTwo(true)}>
+                        <LinearGradient
+                          style={Styles.salvar}
+                          colors={['#BFCDE0', '#5D5D81']}>
+                          <Text style={Styles.textsalvar}>Salvar</Text>
+                        </LinearGradient>
+                      </TouchableOpacity>
 
                       <TouchableOpacity
                         onPress={() => setModalVisible(!modalVisible)}>
@@ -151,15 +238,15 @@ export default function Principal() {
               <Modal
                 animationType="slide"
                 transparent={true}
-                visible={modalVisible}
+                visible={modalVisibleTwo}
                 onRequestClose={() => {
-                  setModalVisible(!modalVisible);
+                  setModalVisible(!modalVisibleTwo);
                 }}>
                 <View style={Styles.modalCenter}>
                   <View style={Styles.modal2View}>
                     <View style={Styles.position}>
                       <TouchableOpacity
-                        onPress={() => setModalVisible(!modalVisible)}>
+                        onPress={() => setModalVisibleTwo(!modalVisibleTwo)}>
                         <LinearGradient
                           style={Styles.closeModal}
                           colors={['#BFCDE0', '#5D5D81']}>
@@ -188,9 +275,9 @@ export default function Principal() {
                           if (defaultRating >= 4) {
                             InAppReview.RequestInAppReview();
                             console.log(defaultRating);
-                            setModalVisible(!modalVisible);
+                            setModalVisible(!modalVisibleTwo);
                           } else {
-                            setModalVisible(!modalVisible);
+                            setModalVisible(!modalVisibleTwo);
                             Alert.alert('Obrigada pela avaliação!');
                           }
                         }}>
@@ -207,12 +294,22 @@ export default function Principal() {
             </View>
 
             <TouchableOpacity
-              style={[Styles.button, Styles.buttonOpen]}
+              style={Styles.modals}
               onPress={() => setModalVisible(true)}>
+              <Text style={Styles.modalsText}>Modals</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[Styles.button, Styles.buttonOpen]}
+              onPress={gravando ? onStopRecord : onStartRecord}>
               <LinearGradient
                 style={Styles.botao}
                 colors={['#BFCDE0', '#5D5D81']}>
-                <Icon name="microphone" size={50} color="#fff" />
+                {gravando ? (
+                  <Entypo name="controller-record" size={40} color={'#fff'} />
+                ) : (
+                  <Icon name="microphone" size={50} color="#fff" />
+                )}
               </LinearGradient>
             </TouchableOpacity>
           </View>

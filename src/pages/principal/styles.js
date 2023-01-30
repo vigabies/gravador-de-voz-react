@@ -189,6 +189,7 @@ const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
 
   modalCenter: {
@@ -260,6 +261,21 @@ const Styles = StyleSheet.create({
     position: 'absolute',
     left: 310,
     top: -10,
+  },
+
+  modals: {
+    marginBottom: '3%',
+    backgroundColor: '#ddd',
+    width: 55,
+    height: 30,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  modalsText: {
+    color: '#000',
+    fontWeight: '300',
   },
 });
 
