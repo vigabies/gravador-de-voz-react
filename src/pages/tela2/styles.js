@@ -42,6 +42,7 @@ const Styles = StyleSheet.create({
     color: '#BFCDE0',
     fontWeight: '500',
     fontSize: 36,
+    fontFamily: 'SofiaSans-Light',
   },
 
   recorder: {
@@ -100,6 +101,7 @@ const Styles = StyleSheet.create({
     height: 107,
     alignItems: 'center',
     justifyContent: 'center',
+    fontFamily: 'SofiaSans-Light',
   },
 
   valor: {
@@ -108,6 +110,7 @@ const Styles = StyleSheet.create({
     color: '#5D5D81',
     fontWeight: '700',
     lineHeight: 36,
+    fontFamily: 'SofiaSans-Light',
   },
 
   tempo: {
@@ -115,6 +118,7 @@ const Styles = StyleSheet.create({
     fontWeight: '400',
     lineHeight: 30,
     color: '#5D5D81',
+    fontFamily: 'SofiaSans-Light',
   },
 
   vital: {
@@ -125,25 +129,29 @@ const Styles = StyleSheet.create({
     height: 107,
     alignItems: 'center',
     justifyContent: 'center',
+    fontFamily: 'SofiaSans-Light',
   },
 
   trinta: {
     color: '#918DA0',
     fontWeight: '500',
     fontSize: 18,
+    fontFamily: 'SofiaSans-Light',
   },
 
   vinte: {
     color: '#3B3355',
     fontWeight: '700',
     fontSize: 32,
+    fontFamily: 'SofiaSans-Light',
   },
 
   vitalicio: {
     color: '#3B3355',
-    fontWeight: '400',
+    fontWeight: '500',
     fontSize: 22,
     lineHeight: 31.2,
+    fontFamily: 'SofiaSans-Light',
   },
 
   linhav: {
@@ -182,7 +190,8 @@ const Styles = StyleSheet.create({
   continuar: {
     fontSize: 20,
     color: '#fff',
-    fontWeight: '600',
+    fontWeight: '700',
+    fontFamily: 'SofiaSans-Light',
   },
 
   mintext: {
@@ -191,6 +200,7 @@ const Styles = StyleSheet.create({
     lineHeight: 12,
     fontWeight: '300',
     textAlign: 'justify',
+    fontFamily: 'SofiaSans-Light',
   },
 
   textn: {

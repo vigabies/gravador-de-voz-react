@@ -27,7 +27,12 @@ import Share from 'react-native-share';
 const audioRecorderPlayer = new AudioRecorderPlayer();
 
 export default function Principal() {
-  const opcao = ['Sem Tag', 'Estudo', 'Faculdade', 'Minhas Músicas'];
+  const [opcao, setOpcao] = useState([
+    'Sem Tag',
+    'Estudo',
+    'Faculdade',
+    'Minhas Músicas',
+  ]);
   const [defaultRating, setDefaultRating] = useState(0);
   const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -36,7 +41,7 @@ export default function Principal() {
 
   const [frase, setFrase] = useState({
     inicio: 'Pronto para começar',
-    grav: 'Gravando',
+    grav: 'Gravando...',
   });
 
   const [tempo, setTempo] = useState({
@@ -104,19 +109,16 @@ export default function Principal() {
       recordTime: tempo.recordTime,
     });
 
-    const shareOptions = {
-      title: 'Share file',
-      failOnCancel: false,
-      saveToFiles: true,
-      url: result,
-    };
+    //o share é pra compartilhar ja que nao mostre
+    // const shareOptions = {
+    //   title: 'Share file',
+    //   failOnCancel: false,
+    //   saveToFiles: true,
+    //   url: result,
+    // };
+    // await Share.open(shareOptions);
 
-    await Share.open(shareOptions);
-
-    await RNFS.copyFile(
-      result,
-      RNFS.DocumentDirectoryPath + '/test.mp4',
-    )
+    await RNFS.copyFile(result, RNFS.DocumentDirectoryPath + '/test.mp4')
       .then(success => {
         console.log('file moved!', success);
       })
@@ -125,6 +127,9 @@ export default function Principal() {
       });
 
     console.log('teste', result);
+
+    //setModalVisible serve para mostrar o modal
+    setModalVisible(true);
   }
 
   const navegation = useNavigation();
@@ -312,12 +317,6 @@ export default function Principal() {
                 </View>
               </Modal>
             </View>
-
-            <TouchableOpacity
-              style={Styles.modals}
-              onPress={() => setModalVisible(true)}>
-              <Text style={Styles.modalsText}>Modals</Text>
-            </TouchableOpacity>
 
             <TouchableOpacity
               style={[Styles.button, Styles.buttonOpen]}

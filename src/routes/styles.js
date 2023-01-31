@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     fontWeight: '500',
+    fontFamily: 'SofiaSans-Light',
   },
 
   letra: {
@@ -20,6 +21,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     fontSize: 15,
     marginLeft: -20,
+    fontFamily: 'SofiaSans-Light',
   },
 
   easy: {
@@ -27,11 +29,13 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     fontSize: 24,
     marginLeft: -20,
+    fontFamily: 'SofiaSans-Light',
   },
 
   recorder: {
     color: '#3B3355',
     fontWeight: '800',
+    fontFamily: 'SofiaSans-Light',
   },
 
   easy2: {
@@ -57,6 +61,7 @@ const styles = StyleSheet.create({
     color: '#3B3355',
     fontSize: 15,
     marginLeft: -20,
+    fontFamily: 'SofiaSans-Light',
   },
 
   at: {
@@ -71,6 +76,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     textAlign: 'center',
     top: 2,
+    fontFamily: 'SofiaSans-Light',
   },
 
   padrao: {
@@ -78,6 +84,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 20,
     marginLeft: -20,
+    fontFamily: 'SofiaSans-Light',
   },
 
   arrow: {

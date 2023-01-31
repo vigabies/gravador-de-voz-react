@@ -4,7 +4,8 @@ const Styles = StyleSheet.create({
     backgroundColor: '#fff',
     flex: 1,
   },
-  // -----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
+
   title: {
     fontSize: 20,
     color: '#BFCDE0',
@@ -12,6 +13,7 @@ const Styles = StyleSheet.create({
     lineHeight: 24,
     top: '5%',
     marginBottom: '3%',
+    fontFamily: 'SofiaSans-Light',
   },
 
   text: {
@@ -20,6 +22,7 @@ const Styles = StyleSheet.create({
     color: '#3B3355',
     top: '5%',
     marginBottom: '4%',
+    fontFamily: 'SofiaSans-Light',
   },
 
   sub: {
@@ -27,6 +30,7 @@ const Styles = StyleSheet.create({
     fontWeight: '300',
     marginTop: '1%',
     color: '#3B3355',
+    fontFamily: 'SofiaSans-Light',
   },
 
   // -----------------------------------------------------------------------------

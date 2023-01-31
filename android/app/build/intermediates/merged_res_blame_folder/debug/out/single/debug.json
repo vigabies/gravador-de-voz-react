@@ -1,43 +1,43 @@
 [
     {
-        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xhdpi_iconerec.png.flat",
+        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xhdpi/iconerec.png"
     },
     {
-        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-mdpi_iconerecsquare.png.flat",
+        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-mdpi/iconerecsquare.png"
     },
     {
-        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-hdpi_iconerec.png.flat",
+        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-hdpi/iconerec.png"
     },
     {
-        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_iconerecsquare.png.flat",
+        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xxhdpi/iconerecsquare.png"
     },
     {
-        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xhdpi_iconerecsquare.png.flat",
+        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xhdpi/iconerecsquare.png"
     },
     {
-        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_iconerecsquare.png.flat",
+        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xxxhdpi/iconerecsquare.png"
     },
     {
-        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_iconerec.png.flat",
+        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xxxhdpi/iconerec.png"
     },
     {
-        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-hdpi_iconerecsquare.png.flat",
+        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-hdpi/iconerecsquare.png"
     },
     {
-        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_iconerec.png.flat",
+        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-xxhdpi/iconerec.png"
     },
     {
-        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/mipmap-mdpi_iconerec.png.flat",
+        "source": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/res/mipmap-mdpi/iconerec.png"
     },
     {
         "merged": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/merged_res/debug/drawable_rn_edit_text_material.xml.flat",

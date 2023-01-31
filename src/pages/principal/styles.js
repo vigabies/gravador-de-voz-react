@@ -19,6 +19,7 @@ const Styles = StyleSheet.create({
     color: '#3B3355',
     fontWeight: '500',
     fontSize: 17,
+    fontFamily: 'SofiaSans-Light',
   },
 
   text3: {
@@ -26,6 +27,7 @@ const Styles = StyleSheet.create({
     opacity: 0.5,
     fontSize: 17,
     fontWeight: '500',
+    fontFamily: 'SofiaSans-Light',
   },
   // -----------------------------------------------------------------------------
   body: {
@@ -38,6 +40,7 @@ const Styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 50,
     color: '#3B3355',
+    fontFamily: 'SofiaSans-Light',
   },
 
   text: {
@@ -46,6 +49,7 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
     color: '#3B3355',
     opacity: 0.5,
+    fontFamily: 'SofiaSans-Light',
   },
 
   // -----------------------------------------------------------------------------
@@ -215,6 +219,7 @@ const Styles = StyleSheet.create({
     marginTop: '3%',
     marginBottom: '6%',
     lineHeight: 24,
+    fontFamily: 'SofiaSans-Light',
   },
 
   avaliacao: {
@@ -225,6 +230,7 @@ const Styles = StyleSheet.create({
     marginTop: '5%',
     marginBottom: '6%',
     lineHeight: 18,
+    fontFamily: 'SofiaSans-Light',
   },
 
   avaliar: {
@@ -235,12 +241,14 @@ const Styles = StyleSheet.create({
     marginLeft: '4%',
     justifyContent: 'center',
     alignItems: 'center',
+    fontFamily: 'SofiaSans-Light',
   },
 
   textAvaliar: {
     color: '#fff',
     fontWeight: '600',
     fontSize: 19,
+    fontFamily: 'SofiaSans-Light',
   },
 
   closeModal: {
@@ -276,6 +284,7 @@ const Styles = StyleSheet.create({
   modalsText: {
     color: '#000',
     fontWeight: '300',
+    fontFamily: 'SofiaSans-Light',
   },
 });
 
