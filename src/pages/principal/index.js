@@ -23,6 +23,18 @@ import InAppReview from 'react-native-in-app-review';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 import RNFS from 'react-native-fs';
 import Share from 'react-native-share';
+import SQLite from 'react-native-sqlite-storage';
+
+const db = SQLite.openDatabase(
+  {
+    name: 'MainDB',
+    location: 'default',
+  },
+  () => {},
+  error => {
+    console.log(error);
+  },
+);
 
 const audioRecorderPlayer = new AudioRecorderPlayer();
 
@@ -33,12 +45,12 @@ export default function Principal() {
     'Faculdade',
     'Minhas Músicas',
   ]);
+  const [nome, setNome] = useState('');
   const [defaultRating, setDefaultRating] = useState(0);
   const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5]);
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisibleTwo, setModalVisibleTwo] = useState(false);
   const [gravar, setGravar] = useState(true);
-
   const [frase, setFrase] = useState({
     inicio: 'Pronto para começar',
     grav: 'Gravando...',
@@ -97,6 +109,16 @@ export default function Principal() {
     console.log(result);
   }
 
+  async function SalvarBanco() {
+    await db.transaction(async tx => {
+      await tx.executeSql(
+        'INSERT INTO audios (title, datahora, tamanho, tags, duracao, caminho) VALUES (?,?,?,?,?,?) ',
+        [],
+      );
+      console.log('será que deu certo');
+    });
+  }
+
   // o async significa que nossa função vai retornar um de cada vez, colocamos
   // ele na frente para o await funcionar
 
@@ -108,15 +130,6 @@ export default function Principal() {
       recordSecs: 0,
       recordTime: tempo.recordTime,
     });
-
-    //o share é pra compartilhar ja que nao mostre
-    // const shareOptions = {
-    //   title: 'Share file',
-    //   failOnCancel: false,
-    //   saveToFiles: true,
-    //   url: result,
-    // };
-    // await Share.open(shareOptions);
 
     await RNFS.copyFile(result, RNFS.DocumentDirectoryPath + '/test.mp4')
       .then(success => {
@@ -200,7 +213,9 @@ export default function Principal() {
                 <View style={Styles.modalcontainer}>
                   <View style={Styles.modalView}>
                     <Text style={Styles.modaltext}>Salvar Gravação</Text>
+                    
                     <TextInput
+                      onSelect={setNome}
                       style={Styles.input}
                       maxLength={50}
                       placeholder="Nome"
@@ -209,6 +224,7 @@ export default function Principal() {
                     <SelectDropdown
                       data={opcao}
                       onSelect={(selectedItem, index) => {
+                        // setOpcao(selectedItem, index);
                         console.log(selectedItem, index);
                       }}
                       defaultButtonText={'Tag'}
@@ -236,8 +252,7 @@ export default function Principal() {
                     />
 
                     <View style={Styles.linhamodal}>
-                      <TouchableOpacity
-                        onPress={() => setModalVisibleTwo(true)}>
+                      <TouchableOpacity onPress={() => SalvarBanco}>
                         <LinearGradient
                           style={Styles.salvar}
                           colors={['#BFCDE0', '#5D5D81']}>
