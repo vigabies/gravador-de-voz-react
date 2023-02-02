@@ -23,28 +23,14 @@ import InAppReview from 'react-native-in-app-review';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 import RNFS from 'react-native-fs';
 import Share from 'react-native-share';
-import SQLite from 'react-native-sqlite-storage';
-
-const db = SQLite.openDatabase(
-  {
-    name: 'MainDB',
-    location: 'default',
-  },
-  () => {},
-  error => {
-    console.log(error);
-  },
-);
+import sqlite from '../../classes/sqlite';
 
 const audioRecorderPlayer = new AudioRecorderPlayer();
 
+const arrayOptions = ['Sem Tag', 'Estudo', 'Faculdade', 'Minhas Músicas'];
+
 export default function Principal() {
-  const [opcao, setOpcao] = useState([
-    'Sem Tag',
-    'Estudo',
-    'Faculdade',
-    'Minhas Músicas',
-  ]);
+  const [opcao, setOpcao] = useState();
   const [nome, setNome] = useState('');
   const [defaultRating, setDefaultRating] = useState(0);
   const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5]);
@@ -110,13 +96,11 @@ export default function Principal() {
   }
 
   async function SalvarBanco() {
-    await db.transaction(async tx => {
-      await tx.executeSql(
-        'INSERT INTO audios (title, datahora, tamanho, tags, duracao, caminho) VALUES (?,?,?,?,?,?) ',
-        [],
-      );
-      console.log('será que deu certo');
-    });
+    await sqlite.query(
+      `INSERT INTO audios (title, data_hora, tamanho, tags, duracao, caminho) VALUES ("${nome}", "", "", "${opcao}", "${tempo.recordTime}", "") `,
+    );
+
+    console.log(await sqlite.query('SELECT * FROM audios'));
   }
 
   // o async significa que nossa função vai retornar um de cada vez, colocamos
@@ -213,18 +197,22 @@ export default function Principal() {
                 <View style={Styles.modalcontainer}>
                   <View style={Styles.modalView}>
                     <Text style={Styles.modaltext}>Salvar Gravação</Text>
-                    
+
                     <TextInput
-                      onSelect={setNome}
+                      value={nome}
+                      onChangeText={tex => {
+                        setNome(tex);
+                        console.log(tex);
+                      }}
                       style={Styles.input}
                       maxLength={50}
                       placeholder="Nome"
                     />
 
                     <SelectDropdown
-                      data={opcao}
+                      data={arrayOptions}
                       onSelect={(selectedItem, index) => {
-                        // setOpcao(selectedItem, index);
+                        setOpcao(selectedItem);
                         console.log(selectedItem, index);
                       }}
                       defaultButtonText={'Tag'}
@@ -251,8 +239,10 @@ export default function Principal() {
                       rowTextStyle={Styles.corTextLinha}
                     />
 
+                    {/* quando tem () => o final tem que ter parenteses */}
+
                     <View style={Styles.linhamodal}>
-                      <TouchableOpacity onPress={() => SalvarBanco}>
+                      <TouchableOpacity onPress={SalvarBanco}>
                         <LinearGradient
                           style={Styles.salvar}
                           colors={['#BFCDE0', '#5D5D81']}>
