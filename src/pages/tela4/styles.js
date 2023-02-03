@@ -121,7 +121,6 @@ const Styles = StyleSheet.create({
     backgroundColor: '#3B3355',
     color: '#BFCDE0',
     borderRadius: 2,
-    width: 40,
     textAlign: 'center',
     marginRight: 10,
     marginTop: '-3%',
