@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
+            "outputFile": "C:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
-                    "source": "/Users/mac/.gradle/caches/transforms-3/1078ff708f6dc1b9827966619a73d660/transformed/material-1.1.0/res/values-small-v4/values-small-v4.xml",
+                    "source": "C:\\Users\\gabri\\.gradle\\caches\\transforms-3\\1078ff708f6dc1b9827966619a73d660\\transformed\\material-1.1.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

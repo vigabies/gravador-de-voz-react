@@ -246,11 +246,11 @@ export default function Principal() {
                     {/* quando tem () => o final tem que ter parenteses */}
 
                     <View style={Styles.linhamodal}>
-                      <TouchableOpacity onPress={SalvarBanco}>
+                      <TouchableOpacity onPress={() => setModalVisibleTwo()}>
                         <LinearGradient
                           style={Styles.salvar}
                           colors={['#BFCDE0', '#5D5D81']}>
-                          <Text style={Styles.textsalvar}>Salvar</Text>
+                          <Text onPress={SalvarBanco} style={Styles.textsalvar}>Salvar</Text>
                         </LinearGradient>
                       </TouchableOpacity>
 

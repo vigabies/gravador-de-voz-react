@@ -1,4 +1,4 @@
-#Wed Feb 01 15:39:42 BRT 2023
+#Tue Feb 07 16:50:53 BRT 2023
 path.4=14/classes.dex
 path.3=11/classes.dex
 path.2=0/classes.dex
@@ -9,20 +9,20 @@ path.7=3/classes.dex
 path.6=2/classes.dex
 path.5=15/classes.dex
 path.0=classes.dex
-base.4=/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
-base.3=/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex
-base.2=/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.1=/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
-base.0=/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.4=C\:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.3=C\:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.2=C\:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.1=C\:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.0=C\:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
 renamed.7=classes8.dex
-base.8=/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+base.8=C\:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 renamed.6=classes7.dex
-base.7=/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex
+base.7=C\:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
 renamed.5=classes6.dex
-base.6=/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
+base.6=C\:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
 renamed.4=classes5.dex
-base.5=/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex
+base.5=C\:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
