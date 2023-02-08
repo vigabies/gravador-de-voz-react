@@ -133,6 +133,91 @@ const Styles = StyleSheet.create({
     color: '#fff',
     fontFamily: 'SofiaSans-Light',
   },
+  // =========================== MODAL ICONE
+
+  modalOpen: {
+    flex: 1,
+    width: 360,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  buttonClose: {
+    position: 'absolute',
+    left: 280,
+    top: -10,
+  },
+
+  buttonCloseStyles: {
+    borderRadius: 100,
+    width: 30,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  icone: {
+    color: 'white',
+  },
+
+  modalView: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    width: 300,
+    height: 200,
+    alignItems: 'center',
+  },
+
+  modalText: {
+    fontFamily: 'SofiaSans-Light',
+    marginTop: '10%',
+    marginBottom: '5%',
+    fontSize: 16,
+    color: '#3B3355',
+    fontWeight: '600',
+  },
+
+  input: {
+    fontFamily: 'SofiaSans-Light',
+    marginBottom: '10%',
+    borderWidth: 1,
+    borderColor: '#3B3355',
+    padding: 10,
+    borderRadius: 5,
+    width: 262,
+    height: 47,
+    color: '#3B3355',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+
+  salvarText: {
+    fontFamily: 'SofiaSans-Light',
+    color: '#fff',
+  },
+
+  cancelar: {
+    height: 30,
+    width: 50,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  salvar: {
+    height: 30,
+    width: 50,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: '10%',
+  },
+
+  linhadelete: {
+    flexDirection: 'row',
+  },
 });
 
 export default Styles;

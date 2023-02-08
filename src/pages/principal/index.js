@@ -22,7 +22,6 @@ import SelectDropdown from 'react-native-select-dropdown';
 import InAppReview from 'react-native-in-app-review';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 import RNFS from 'react-native-fs';
-import Share from 'react-native-share';
 import sqlite from '../../classes/sqlite';
 
 const audioRecorderPlayer = new AudioRecorderPlayer();
@@ -96,12 +95,12 @@ export default function Principal() {
   }
 
   async function SalvarBanco() {
-    let date = new Date();
+    // let date = new Date();
     // date = date.getDate().toString();
     // dia = date.getDay();
     // mes = date.getMonth();
     // ano = date.getFullYear();
-
+    const date = new Date().toLocaleString();
     await sqlite.query(
       `INSERT INTO audios (title, data_hora, tamanho, tags, duracao, caminho) VALUES ("${nome}", "${date}", "", "${opcao}", "${tempo.recordTime}", "") `,
     );
@@ -127,7 +126,7 @@ export default function Principal() {
         console.log('Error: ' + err.message);
       });
 
-    console.log('teste', result);
+    // console.log('teste', result);
 
     //setModalVisible serve para mostrar o modal
     setModalVisible(true);
@@ -200,6 +199,16 @@ export default function Principal() {
                 onPress={() => setModalVisible(!modalVisible)}>
                 <View style={Styles.modalcontainer}>
                   <View style={Styles.modalView}>
+                    <View style={Styles.position}>
+                      <TouchableOpacity onPress={() => setModalVisible(false)}>
+                        <LinearGradient
+                          style={Styles.closeModal}
+                          colors={['#BFCDE0', '#5D5D81']}>
+                          <AntDesign name="close" size={20} color="#fff" />
+                        </LinearGradient>
+                      </TouchableOpacity>
+                    </View>
+
                     <Text style={Styles.modaltext}>Salvar Gravação</Text>
 
                     <TextInput
@@ -246,11 +255,14 @@ export default function Principal() {
                     {/* quando tem () => o final tem que ter parenteses */}
 
                     <View style={Styles.linhamodal}>
-                      <TouchableOpacity onPress={() => setModalVisibleTwo()}>
+                      <TouchableOpacity
+                        onPress={() => setModalVisibleTwo(true)}>
                         <LinearGradient
                           style={Styles.salvar}
                           colors={['#BFCDE0', '#5D5D81']}>
-                          <Text onPress={SalvarBanco} style={Styles.textsalvar}>Salvar</Text>
+                          <TouchableOpacity onPress={SalvarBanco}>
+                            <Text style={Styles.textsalvar}>Salvar</Text>
+                          </TouchableOpacity>
                         </LinearGradient>
                       </TouchableOpacity>
 
@@ -280,7 +292,7 @@ export default function Principal() {
                   <View style={Styles.modal2View}>
                     <View style={Styles.position}>
                       <TouchableOpacity
-                        onPress={() => setModalVisibleTwo(!modalVisibleTwo)}>
+                        onPress={() => setModalVisibleTwo(false)}>
                         <LinearGradient
                           style={Styles.closeModal}
                           colors={['#BFCDE0', '#5D5D81']}>
@@ -309,9 +321,9 @@ export default function Principal() {
                           if (defaultRating >= 4) {
                             InAppReview.RequestInAppReview();
                             console.log(defaultRating);
-                            setModalVisible(!modalVisibleTwo);
+                            setModalVisibleTwo(false);
                           } else {
-                            setModalVisible(!modalVisibleTwo);
+                            setModalVisibleTwo(false);
                             Alert.alert('Obrigada pela avaliação!');
                           }
                         }}>

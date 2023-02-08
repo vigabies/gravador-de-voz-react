@@ -152,6 +152,7 @@ const Styles = StyleSheet.create({
     color: '#3B3355',
     fontSize: 16,
     fontWeight: '400',
+    fontFamily: 'SofiaSans-Light',
   },
 
   // -----------------------------------------------------------------------------

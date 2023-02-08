@@ -35,6 +35,8 @@ export default function Tela4() {
     return <Item data={item} />;
   }
 
+  
+
   return (
     <View style={Styles.container}>
       <View style={Styles.body}>
