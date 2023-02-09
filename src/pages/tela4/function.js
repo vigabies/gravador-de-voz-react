@@ -16,6 +16,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
+
 export function Navegar(navigation) {
   navigation.navigate('Principal');
 }
@@ -23,6 +24,14 @@ export function Navegar(navigation) {
 export function Item({data}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [nome, setNome] = useState('');
+
+  const [list, setList] = useState([]);
+
+  function handleRemove() {
+    let aux = JSON.parse(JSON.stringify(estado));
+    aux.pop();
+    setEstado(aux);
+  }
 
   return (
     <View style={Styles.linha3}>
@@ -95,7 +104,8 @@ export function Item({data}) {
                 <TouchableOpacity>
                   <LinearGradient
                     colors={['#BFCDE0', '#5D5D81']}
-                    style={Styles.cancelar}>
+                    style={Styles.cancelar}
+                    onPress={() => handleRemove([])}>
                     <MaterialIcons name="delete" size={25} color="#fff" />
                   </LinearGradient>
                 </TouchableOpacity>

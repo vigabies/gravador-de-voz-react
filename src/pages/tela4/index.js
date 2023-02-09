@@ -35,15 +35,14 @@ export default function Tela4() {
     return <Item data={item} />;
   }
 
-  
 
   return (
     <View style={Styles.container}>
       <View style={Styles.body}>
-        <FlatList
+     < FlatList
           data={list}
           renderItem={renderItem}
-          keyExtractor={item => item.id}
+          keyExtractor={(item) => item.id}
         />
       </View>
 
