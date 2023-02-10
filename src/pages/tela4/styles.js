@@ -210,7 +210,7 @@ const Styles = StyleSheet.create({
     height: 30,
     width: 50,
     borderRadius: 10,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
     marginLeft: '10%',
   },

@@ -9,168 +9,168 @@
 9        android:targetSdkVersion="31" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\debug\AndroidManifest.xml:5:5-77
-11-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\debug\AndroidManifest.xml:5:22-75
+11-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/debug/AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:4:5-67
-12-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:4:22-64
+12-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:4:22-64
 13    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-13-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:5:5-71
-13-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:5:22-68
+13-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:5:5-71
+13-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:5:22-68
 14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-14-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:6:5-81
-14-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:6:22-78
+14-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:6:5-81
+14-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:6:22-78
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:7:5-80
-15-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:7:22-77
+15-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:7:5-80
+15-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:7:22-77
 16    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Permission will be merged into the manifest of the hosting app. -->
-16-->[com.facebook.flipper:flipper:0.125.0] C:\Users\gabri\.gradle\caches\transforms-3\bae35ff68c27edf412f3700024be0ffe\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:5-76
-16-->[com.facebook.flipper:flipper:0.125.0] C:\Users\gabri\.gradle\caches\transforms-3\bae35ff68c27edf412f3700024be0ffe\transformed\jetified-flipper-0.125.0\AndroidManifest.xml:16:22-73
+16-->[com.facebook.flipper:flipper:0.125.0] /Users/mac/.gradle/caches/transforms-3/bae35ff68c27edf412f3700024be0ffe/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
+16-->[com.facebook.flipper:flipper:0.125.0] /Users/mac/.gradle/caches/transforms-3/bae35ff68c27edf412f3700024be0ffe/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
 17    <!-- Is required to launch foreground extraction service for targetSdkVersion 28+. -->
 18    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-18-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:8:3-74
-18-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:8:20-72
+18-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:8:3-74
+18-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:8:20-72
 19
 20    <application
-20-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:9:5-28:19
+20-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:9:5-28:19
 21        android:name="com.gravadorreact.MainApplication"
-21-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:10:7-38
+21-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:10:7-38
 22        android:allowBackup="false"
-22-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:14:7-34
+22-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:14:7-34
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.7.0] C:\Users\gabri\.gradle\caches\transforms-3\b2197c574567c595cb9e45a5d8e1862d\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+23-->[androidx.core:core:1.7.0] /Users/mac/.gradle/caches/transforms-3/b2197c574567c595cb9e45a5d8e1862d/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
 24        android:debuggable="true"
 25        android:icon="@mipmap/iconerecsquare"
-25-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:12:7-44
+25-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:12:7-44
 26        android:label="@string/app_name"
-26-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:11:7-39
+26-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:11:7-39
 27        android:roundIcon="@mipmap/iconerec"
-27-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:13:7-43
+27-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:13:7-43
 28        android:theme="@style/AppTheme"
-28-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:15:7-38
+28-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:15:7-38
 29        android:usesCleartextTraffic="true" >
-29-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\debug\AndroidManifest.xml:8:9-44
+29-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/debug/AndroidManifest.xml:8:9-44
 30        <activity
-30-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\debug\AndroidManifest.xml:11:9-111
+30-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/debug/AndroidManifest.xml:11:9-111
 31            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-31-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\debug\AndroidManifest.xml:11:19-83
+31-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/debug/AndroidManifest.xml:11:19-83
 32            android:exported="false" />
-32-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\debug\AndroidManifest.xml:11:84-108
+32-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/debug/AndroidManifest.xml:11:84-108
 33        <activity
-33-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:16:7-27:18
+33-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:16:7-27:18
 34            android:name="com.gravadorreact.MainActivity"
-34-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:17:9-37
+34-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:17:9-37
 35            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-35-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:19:9-118
+35-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:19:9-118
 36            android:exported="true"
-36-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:22:9-32
+36-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:22:9-32
 37            android:label="@string/app_name"
-37-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:18:9-41
+37-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:18:9-41
 38            android:launchMode="singleTask"
-38-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:20:9-40
+38-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:20:9-40
 39            android:windowSoftInputMode="adjustResize" >
-39-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:21:9-51
+39-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:21:9-51
 40            <intent-filter>
-40-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:23:9-26:25
+40-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:23:9-26:25
 41                <action android:name="android.intent.action.MAIN" />
-41-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:24:13-65
-41-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:24:21-62
+41-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:24:13-65
+41-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:24:21-62
 42
 43                <category android:name="android.intent.category.LAUNCHER" />
-43-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:25:13-73
-43-->C:\Users\gabri\Downloads\gravador-de-voz-react\android\app\src\main\AndroidManifest.xml:25:23-70
+43-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:25:13-73
+43-->/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/src/main/AndroidManifest.xml:25:23-70
 44            </intent-filter>
 45        </activity>
 46
 47        <provider
-47-->[:react-native-share] C:\Users\gabri\Downloads\gravador-de-voz-react\node_modules\react-native-share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+47-->[:react-native-share] /Users/mac/Documents/GitHub/gravador-de-voz-react/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
 48            android:name="cl.json.RNShareFileProvider"
-48-->[:react-native-share] C:\Users\gabri\Downloads\gravador-de-voz-react\node_modules\react-native-share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-55
+48-->[:react-native-share] /Users/mac/Documents/GitHub/gravador-de-voz-react/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-55
 49            android:authorities="com.gravadorreact.rnshare.fileprovider"
-49-->[:react-native-share] C:\Users\gabri\Downloads\gravador-de-voz-react\node_modules\react-native-share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-72
+49-->[:react-native-share] /Users/mac/Documents/GitHub/gravador-de-voz-react/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-72
 50            android:exported="false"
-50-->[:react-native-share] C:\Users\gabri\Downloads\gravador-de-voz-react\node_modules\react-native-share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+50-->[:react-native-share] /Users/mac/Documents/GitHub/gravador-de-voz-react/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
 51            android:grantUriPermissions="true" >
-51-->[:react-native-share] C:\Users\gabri\Downloads\gravador-de-voz-react\node_modules\react-native-share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+51-->[:react-native-share] /Users/mac/Documents/GitHub/gravador-de-voz-react/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
 52            <meta-data
-52-->[:react-native-share] C:\Users\gabri\Downloads\gravador-de-voz-react\node_modules\react-native-share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:64
+52-->[:react-native-share] /Users/mac/Documents/GitHub/gravador-de-voz-react/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:64
 53                android:name="android.support.FILE_PROVIDER_PATHS"
-53-->[:react-native-share] C:\Users\gabri\Downloads\gravador-de-voz-react\node_modules\react-native-share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+53-->[:react-native-share] /Users/mac/Documents/GitHub/gravador-de-voz-react/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
 54                android:resource="@xml/share_download_paths" />
-54-->[:react-native-share] C:\Users\gabri\Downloads\gravador-de-voz-react\node_modules\react-native-share\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-61
+54-->[:react-native-share] /Users/mac/Documents/GitHub/gravador-de-voz-react/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-61
 55        </provider>
 56
 57        <activity
-57-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\gabri\.gradle\caches\transforms-3\1dbe1b9f2422480ae401634522fdddf2\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
+57-->[com.google.android.gms:play-services-base:17.5.0] /Users/mac/.gradle/caches/transforms-3/1dbe1b9f2422480ae401634522fdddf2/transformed/jetified-play-services-base-17.5.0/AndroidManifest.xml:23:9-26:75
 58            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-58-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\gabri\.gradle\caches\transforms-3\1dbe1b9f2422480ae401634522fdddf2\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
+58-->[com.google.android.gms:play-services-base:17.5.0] /Users/mac/.gradle/caches/transforms-3/1dbe1b9f2422480ae401634522fdddf2/transformed/jetified-play-services-base-17.5.0/AndroidManifest.xml:24:13-79
 59            android:exported="false"
-59-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\gabri\.gradle\caches\transforms-3\1dbe1b9f2422480ae401634522fdddf2\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
+59-->[com.google.android.gms:play-services-base:17.5.0] /Users/mac/.gradle/caches/transforms-3/1dbe1b9f2422480ae401634522fdddf2/transformed/jetified-play-services-base-17.5.0/AndroidManifest.xml:25:13-37
 60            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-60-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\gabri\.gradle\caches\transforms-3\1dbe1b9f2422480ae401634522fdddf2\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
+60-->[com.google.android.gms:play-services-base:17.5.0] /Users/mac/.gradle/caches/transforms-3/1dbe1b9f2422480ae401634522fdddf2/transformed/jetified-play-services-base-17.5.0/AndroidManifest.xml:26:13-72
 61
 62        <meta-data
-62-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\gabri\.gradle\caches\transforms-3\81e7090c433628750b3177004be59051\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
+62-->[com.google.android.gms:play-services-basement:17.5.0] /Users/mac/.gradle/caches/transforms-3/81e7090c433628750b3177004be59051/transformed/jetified-play-services-basement-17.5.0/AndroidManifest.xml:23:9-25:69
 63            android:name="com.google.android.gms.version"
-63-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\gabri\.gradle\caches\transforms-3\81e7090c433628750b3177004be59051\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
+63-->[com.google.android.gms:play-services-basement:17.5.0] /Users/mac/.gradle/caches/transforms-3/81e7090c433628750b3177004be59051/transformed/jetified-play-services-basement-17.5.0/AndroidManifest.xml:24:13-58
 64            android:value="@integer/google_play_services_version" />
-64-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\gabri\.gradle\caches\transforms-3\81e7090c433628750b3177004be59051\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
+64-->[com.google.android.gms:play-services-basement:17.5.0] /Users/mac/.gradle/caches/transforms-3/81e7090c433628750b3177004be59051/transformed/jetified-play-services-basement-17.5.0/AndroidManifest.xml:25:13-66
 65
 66        <provider
-66-->[androidx.emoji2:emoji2:1.0.0] C:\Users\gabri\.gradle\caches\transforms-3\240a630830214d0cc45e60bc7bdecea8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+66-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/240a630830214d0cc45e60bc7bdecea8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
 67            android:name="androidx.startup.InitializationProvider"
-67-->[androidx.emoji2:emoji2:1.0.0] C:\Users\gabri\.gradle\caches\transforms-3\240a630830214d0cc45e60bc7bdecea8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+67-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/240a630830214d0cc45e60bc7bdecea8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
 68            android:authorities="com.gravadorreact.androidx-startup"
-68-->[androidx.emoji2:emoji2:1.0.0] C:\Users\gabri\.gradle\caches\transforms-3\240a630830214d0cc45e60bc7bdecea8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+68-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/240a630830214d0cc45e60bc7bdecea8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
 69            android:exported="false" >
-69-->[androidx.emoji2:emoji2:1.0.0] C:\Users\gabri\.gradle\caches\transforms-3\240a630830214d0cc45e60bc7bdecea8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+69-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/240a630830214d0cc45e60bc7bdecea8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
 70            <meta-data
-70-->[androidx.emoji2:emoji2:1.0.0] C:\Users\gabri\.gradle\caches\transforms-3\240a630830214d0cc45e60bc7bdecea8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+70-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/240a630830214d0cc45e60bc7bdecea8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
 71                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-71-->[androidx.emoji2:emoji2:1.0.0] C:\Users\gabri\.gradle\caches\transforms-3\240a630830214d0cc45e60bc7bdecea8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+71-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/240a630830214d0cc45e60bc7bdecea8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
 72                android:value="androidx.startup" />
-72-->[androidx.emoji2:emoji2:1.0.0] C:\Users\gabri\.gradle\caches\transforms-3\240a630830214d0cc45e60bc7bdecea8\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+72-->[androidx.emoji2:emoji2:1.0.0] /Users/mac/.gradle/caches/transforms-3/240a630830214d0cc45e60bc7bdecea8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
 73            <meta-data
-73-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\gabri\.gradle\caches\transforms-3\09700f3721583a6350c6012dfc152019\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+73-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/mac/.gradle/caches/transforms-3/09700f3721583a6350c6012dfc152019/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
 74                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-74-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\gabri\.gradle\caches\transforms-3\09700f3721583a6350c6012dfc152019\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+74-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/mac/.gradle/caches/transforms-3/09700f3721583a6350c6012dfc152019/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
 75                android:value="androidx.startup" />
-75-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\gabri\.gradle\caches\transforms-3\09700f3721583a6350c6012dfc152019\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+75-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/mac/.gradle/caches/transforms-3/09700f3721583a6350c6012dfc152019/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
 76        </provider> <!-- The activities will be merged into the manifest of the hosting app. -->
 77        <activity
-77-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:12:5-271
+77-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:12:5-271
 78            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
-78-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:12:15-102
+78-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:12:15-102
 79            android:enabled="false"
-79-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:12:103-126
+79-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:12:103-126
 80            android:exported="false"
-80-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:12:127-151
+80-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:12:127-151
 81            android:launchMode="singleInstance"
-81-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:12:204-239
+81-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:12:204-239
 82            android:process=":playcore_missing_splits_activity"
-82-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:12:152-203
+82-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:12:152-203
 83            android:stateNotNeeded="true" />
-83-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:12:240-269
+83-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:12:240-269
 84        <activity
-84-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:13:5-226
+84-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:13:5-226
 85            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-85-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:13:15-95
+85-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:13:15-95
 86            android:enabled="false"
-86-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:13:96-119
+86-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:13:96-119
 87            android:exported="false"
-87-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:13:120-144
+87-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:13:120-144
 88            android:stateNotNeeded="true"
-88-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:13:145-174
+88-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:13:145-174
 89            android:theme="@style/Theme.PlayCore.Transparent" /> <!-- The service will be merged into the manifest of the hosting app. -->
-89-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:13:175-224
+89-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:13:175-224
 90        <service
-90-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:16:5-145
+90-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:16:5-145
 91            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
-91-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:16:14-95
+91-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:16:14-95
 92            android:enabled="false"
-92-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:16:96-119
+92-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:16:96-119
 93            android:exported="true" />
-93-->[com.google.android.play:core:1.9.0] C:\Users\gabri\.gradle\caches\transforms-3\89a8fbd61b3bde1c1098311e695430e1\transformed\jetified-core-1.9.0\AndroidManifest.xml:16:120-143
+93-->[com.google.android.play:core:1.9.0] /Users/mac/.gradle/caches/transforms-3/786e843072ecbb5407a945c8141acced/transformed/jetified-core-1.9.0/AndroidManifest.xml:16:120-143
 94    </application>
 95
 96</manifest>

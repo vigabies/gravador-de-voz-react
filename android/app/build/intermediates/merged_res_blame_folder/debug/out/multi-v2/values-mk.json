@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\gabri\\Downloads\\gravador-de-voz-react\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mk\\values-mk.xml",
+            "outputFile": "/Users/mac/Documents/GitHub/gravador-de-voz-react/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mk/values-mk.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\gabri\\.gradle\\caches\\transforms-3\\118736e8d241671013434dc6d5136c1a\\transformed\\browser-1.2.0\\res\\values-mk\\values-mk.xml",
+                    "source": "/Users/mac/.gradle/caches/transforms-3/118736e8d241671013434dc6d5136c1a/transformed/browser-1.2.0/res/values-mk/values-mk.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\gabri\\.gradle\\caches\\transforms-3\\b2197c574567c595cb9e45a5d8e1862d\\transformed\\core-1.7.0\\res\\values-mk\\values-mk.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "52",
-                        "startColumns": "4",
-                        "startOffsets": "6066",
-                        "endColumns": "100",
-                        "endOffsets": "6162"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\gabri\\.gradle\\caches\\transforms-3\\080fc22e5bfa93f58e57a40b07c1bc52\\transformed\\appcompat-1.4.1\\res\\values-mk\\values-mk.xml",
+                    "source": "/Users/mac/.gradle/caches/transforms-3/080fc22e5bfa93f58e57a40b07c1bc52/transformed/appcompat-1.4.1/res/values-mk/values-mk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\gabri\\.gradle\\caches\\transforms-3\\81e7090c433628750b3177004be59051\\transformed\\jetified-play-services-basement-17.5.0\\res\\values-mk\\values.xml",
+                    "source": "/Users/mac/.gradle/caches/transforms-3/81e7090c433628750b3177004be59051/transformed/jetified-play-services-basement-17.5.0/res/values-mk/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -72,7 +55,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\gabri\\.gradle\\caches\\transforms-3\\1dbe1b9f2422480ae401634522fdddf2\\transformed\\jetified-play-services-base-17.5.0\\res\\values-mk\\values.xml",
+                    "source": "/Users/mac/.gradle/caches/transforms-3/b2197c574567c595cb9e45a5d8e1862d/transformed/core-1.7.0/res/values-mk/values-mk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "52",
+                        "startColumns": "4",
+                        "startOffsets": "6066",
+                        "endColumns": "100",
+                        "endOffsets": "6162"
+                    }
+                },
+                {
+                    "source": "/Users/mac/.gradle/caches/transforms-3/1dbe1b9f2422480ae401634522fdddf2/transformed/jetified-play-services-base-17.5.0/res/values-mk/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

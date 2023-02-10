@@ -126,8 +126,6 @@ export default function Principal() {
         console.log('Error: ' + err.message);
       });
 
-    // console.log('teste', result);
-
     //setModalVisible serve para mostrar o modal
     setModalVisible(true);
   }

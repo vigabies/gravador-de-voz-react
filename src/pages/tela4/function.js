@@ -8,14 +8,13 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import Styles from './styles';
-import {useNavigation} from '@react-navigation/native';
 import Feather from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
 import LinearGradient from 'react-native-linear-gradient';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-
+import {useNavigation} from '@react-navigation/native';
+import sqlite from '../../classes/sqlite';
 
 export function Navegar(navigation) {
   navigation.navigate('Principal');
@@ -25,12 +24,11 @@ export function Item({data}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [nome, setNome] = useState('');
 
-  const [list, setList] = useState([]);
-
-  function handleRemove() {
-    let aux = JSON.parse(JSON.stringify(estado));
-    aux.pop();
-    setEstado(aux);
+  //===============================================
+  //SEMPRE FAZER COM SQLITE, LEMBRA DE PUXAR COMO $
+  async function deleteId(id_audio) {
+    await sqlite.query(`DELETE FROM audios WHERE id_audio = ${id_audio}`);
+    console.log(await sqlite.query('SELECT * FROM audios'));
   }
 
   return (
@@ -93,6 +91,14 @@ export function Item({data}) {
               />
 
               <View style={Styles.linhadelete}>
+                <TouchableOpacity onPress={() => setModalVisibleIcon(false)}>
+                  <LinearGradient
+                    colors={['#BFCDE0', '#5D5D81']}
+                    style={Styles.salvar}>
+                    <Text style={Styles.salvarText}>Salvar</Text>
+                  </LinearGradient>
+                </TouchableOpacity>
+
                 <TouchableOpacity>
                   <LinearGradient
                     colors={['#BFCDE0', '#5D5D81']}
@@ -101,11 +107,10 @@ export function Item({data}) {
                   </LinearGradient>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => deleteId(data.id_audio)}>
                   <LinearGradient
                     colors={['#BFCDE0', '#5D5D81']}
-                    style={Styles.cancelar}
-                    onPress={() => handleRemove([])}>
+                    style={Styles.cancelar}>
                     <MaterialIcons name="delete" size={25} color="#fff" />
                   </LinearGradient>
                 </TouchableOpacity>
