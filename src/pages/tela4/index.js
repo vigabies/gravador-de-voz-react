@@ -20,10 +20,8 @@ export default function Tela4() {
     async function getData() {
       // set os valores do database
       const data = await sqlite.query('SELECT * FROM audios');
-
       setList(data);
     }
-
     getData();
   }, []);
 
@@ -35,14 +33,17 @@ export default function Tela4() {
     return <Item data={item} />;
   }
 
+  useEffect(() => {
+    return () => {};
+  }, []);
 
   return (
     <View style={Styles.container}>
       <View style={Styles.body}>
-     < FlatList
+        <FlatList
           data={list}
           renderItem={renderItem}
-          keyExtractor={(item) => item.id}
+          keyExtractor={item => item.id}
         />
       </View>
 

@@ -95,15 +95,13 @@ export default function Principal() {
   }
 
   async function SalvarBanco() {
-    // let date = new Date();
-    // date = date.getDate().toString();
-    // dia = date.getDay();
-    // mes = date.getMonth();
-    // ano = date.getFullYear();
     const date = new Date().toLocaleString();
     await sqlite.query(
       `INSERT INTO audios (title, data_hora, tamanho, tags, duracao, caminho) VALUES ("${nome}", "${date}", "", "${opcao}", "${tempo.recordTime}", "") `,
     );
+    //abre o outro modal, o de parabens
+    setModalVisibleTwo(true);
+    setModalVisible(false);
   }
 
   // o async significa que nossa função vai retornar um de cada vez, colocamos
@@ -253,14 +251,11 @@ export default function Principal() {
                     {/* quando tem () => o final tem que ter parenteses */}
 
                     <View style={Styles.linhamodal}>
-                      <TouchableOpacity
-                        onPress={() => setModalVisibleTwo(true)}>
+                      <TouchableOpacity onPress={SalvarBanco}>
                         <LinearGradient
                           style={Styles.salvar}
                           colors={['#BFCDE0', '#5D5D81']}>
-                          <TouchableOpacity onPress={SalvarBanco}>
-                            <Text style={Styles.textsalvar}>Salvar</Text>
-                          </TouchableOpacity>
+                          <Text style={Styles.textsalvar}>Salvar</Text>
                         </LinearGradient>
                       </TouchableOpacity>
 
@@ -284,7 +279,7 @@ export default function Principal() {
                 transparent={true}
                 visible={modalVisibleTwo}
                 onRequestClose={() => {
-                  setModalVisible(!modalVisibleTwo);
+                  setModalVisibleTwo(!modalVisibleTwo);
                 }}>
                 <View style={Styles.modalCenter}>
                   <View style={Styles.modal2View}>
