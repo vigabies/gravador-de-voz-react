@@ -20,15 +20,19 @@ export function Navegar(navigation) {
   navigation.navigate('Principal');
 }
 
-export function Item({data}) {
+//a gente puxou la do index o setAtualiza
+
+export function Item({data, setList, setAtualiza}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [nome, setNome] = useState('');
 
-  //===============================================
   //SEMPRE FAZER COM SQLITE, LEMBRA DE PUXAR COMO $
   async function deleteId(id_audio) {
     await sqlite.query(`DELETE FROM audios WHERE id_audio = ${id_audio}`);
-    console.log(await sqlite.query('SELECT * FROM audios'));
+
+    // um jeito de fazer o atualiza página é desse jeito
+    // setList(await sqlite.query('SELECT * FROM audios'));
+    setAtualiza(new Date());
   }
 
   return (

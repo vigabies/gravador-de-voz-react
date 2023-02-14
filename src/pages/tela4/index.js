@@ -15,6 +15,7 @@ export default function Tela4() {
   //quando clicar vai para o outro
   const [play, setPlay] = useState(false);
   const [list, setList] = useState([]);
+  const [atualiza, setAtualiza] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -23,19 +24,16 @@ export default function Tela4() {
       setList(data);
     }
     getData();
-  }, []);
+  }, [atualiza]);
 
   function TouchPlay() {
     setPlay(!play);
   }
 
+  // ponhamos o setAtualiza pq temos que mandar pra function e usar ele la, por isso criamos uma const
   function renderItem({item}) {
-    return <Item data={item} />;
+    return <Item data={item} setList={setList} setAtualiza={setAtualiza}/>;
   }
-
-  useEffect(() => {
-    return () => {};
-  }, []);
 
   return (
     <View style={Styles.container}>

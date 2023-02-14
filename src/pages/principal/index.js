@@ -9,23 +9,22 @@ import {
   PermissionsAndroid,
   Platform,
 } from 'react-native';
+import React, {useState} from 'react';
+import {useNavigation, useRoute} from '@react-navigation/native';
+import RNFS from 'react-native-fs';
+import InAppReview from 'react-native-in-app-review';
+import SelectDropdown from 'react-native-select-dropdown';
 import Styles from './styles';
 import {Navegar} from './functions';
 import Tela4 from '../tela4';
-import {useNavigation, useRoute} from '@react-navigation/native';
-import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import LinearGradient from 'react-native-linear-gradient';
-import SelectDropdown from 'react-native-select-dropdown';
-import InAppReview from 'react-native-in-app-review';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
-import RNFS from 'react-native-fs';
 import sqlite from '../../classes/sqlite';
 
 const audioRecorderPlayer = new AudioRecorderPlayer();
-
 const arrayOptions = ['Sem Tag', 'Estudo', 'Faculdade', 'Minhas Músicas'];
 
 export default function Principal() {
@@ -96,6 +95,8 @@ export default function Principal() {
 
   async function SalvarBanco() {
     const date = new Date().toLocaleString();
+    // const statResult = await stat('/test.mp4');
+    // console.log('file size: ' + statResult.size);
     await sqlite.query(
       `INSERT INTO audios (title, data_hora, tamanho, tags, duracao, caminho) VALUES ("${nome}", "${date}", "", "${opcao}", "${tempo.recordTime}", "") `,
     );
@@ -281,54 +282,57 @@ export default function Principal() {
                 onRequestClose={() => {
                   setModalVisibleTwo(!modalVisibleTwo);
                 }}>
-                <View style={Styles.modalCenter}>
-                  <View style={Styles.modal2View}>
-                    <View style={Styles.position}>
-                      <TouchableOpacity
-                        onPress={() => setModalVisibleTwo(false)}>
-                        <LinearGradient
-                          style={Styles.closeModal}
-                          colors={['#BFCDE0', '#5D5D81']}>
-                          <AntDesign name="close" size={20} color="#fff" />
-                        </LinearGradient>
-                      </TouchableOpacity>
-                    </View>
+                <TouchableWithoutFeedback
+                  onPress={() => setModalVisibleTwo(!modalVisibleTwo)}>
+                  <View style={Styles.modalCenter}>
+                    <View style={Styles.modal2View}>
+                      <View style={Styles.position}>
+                        <TouchableOpacity
+                          onPress={() => setModalVisibleTwo(false)}>
+                          <LinearGradient
+                            style={Styles.closeModal}
+                            colors={['#BFCDE0', '#5D5D81']}>
+                            <AntDesign name="close" size={20} color="#fff" />
+                          </LinearGradient>
+                        </TouchableOpacity>
+                      </View>
 
-                    <Text style={Styles.parabens}>
-                      Parabéns! Você gravou seu primeiro áudio!
-                    </Text>
-
-                    <View>
-                      <Text style={Styles.avaliacao}>
-                        Nos avalie com 5 estrelas se estiver gostando do
-                        aplicativo!
+                      <Text style={Styles.parabens}>
+                        Parabéns! Você gravou seu primeiro áudio!
                       </Text>
 
-                      <RatingBar />
+                      <View>
+                        <Text style={Styles.avaliacao}>
+                          Nos avalie com 5 estrelas se estiver gostando do
+                          aplicativo!
+                        </Text>
 
-                      {/* Default é as estrelas selecionadas, se as estrelas for maior que 4
+                        <RatingBar />
+
+                        {/* Default é as estrelas selecionadas, se as estrelas for maior que 4
                          vai aparecer o console, se nao, ele fecha o modal*/}
 
-                      <TouchableOpacity
-                        onPress={() => {
-                          if (defaultRating >= 4) {
-                            InAppReview.RequestInAppReview();
-                            console.log(defaultRating);
-                            setModalVisibleTwo(false);
-                          } else {
-                            setModalVisibleTwo(false);
-                            Alert.alert('Obrigada pela avaliação!');
-                          }
-                        }}>
-                        <LinearGradient
-                          style={Styles.avaliar}
-                          colors={['#BFCDE0', '#5D5D81']}>
-                          <Text style={Styles.textAvaliar}>Avaliar</Text>
-                        </LinearGradient>
-                      </TouchableOpacity>
+                        <TouchableOpacity
+                          onPress={() => {
+                            if (defaultRating >= 4) {
+                              InAppReview.RequestInAppReview();
+                              console.log(defaultRating);
+                              setModalVisibleTwo(false);
+                            } else {
+                              setModalVisibleTwo(false);
+                              Alert.alert('Obrigada pela avaliação!');
+                            }
+                          }}>
+                          <LinearGradient
+                            style={Styles.avaliar}
+                            colors={['#BFCDE0', '#5D5D81']}>
+                            <Text style={Styles.textAvaliar}>Avaliar</Text>
+                          </LinearGradient>
+                        </TouchableOpacity>
+                      </View>
                     </View>
                   </View>
-                </View>
+                </TouchableWithoutFeedback>
               </Modal>
             </View>
 
