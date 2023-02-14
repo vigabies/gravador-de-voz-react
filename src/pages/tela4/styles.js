@@ -218,6 +218,10 @@ const Styles = StyleSheet.create({
   linhadelete: {
     flexDirection: 'row',
   },
+
+  // =========================== LISTA BOTAO
+
+ 
 });
 
 export default Styles;

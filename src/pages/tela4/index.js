@@ -32,17 +32,19 @@ export default function Tela4() {
 
   // ponhamos o setAtualiza pq temos que mandar pra function e usar ele la, por isso criamos uma const
   function renderItem({item}) {
-    return <Item data={item} setList={setList} setAtualiza={setAtualiza}/>;
+    return <Item data={item} setList={setList} setAtualiza={setAtualiza} />;
   }
 
   return (
     <View style={Styles.container}>
       <View style={Styles.body}>
-        <FlatList
-          data={list}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-        />
+        <TouchableOpacity>
+          <FlatList
+            data={list}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}
+          />
+        </TouchableOpacity>
       </View>
 
       <LinearGradient style={Styles.bottom} colors={['#BFCDE0', '#5D5D81']}>
