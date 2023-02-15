@@ -17,6 +17,8 @@ export default function Tela4() {
   const [list, setList] = useState([]);
   const [atualiza, setAtualiza] = useState(false);
 
+  const [cliqueLista, setCliqueLista] = useState(false);
+
   useEffect(() => {
     async function getData() {
       // set os valores do database
@@ -30,66 +32,77 @@ export default function Tela4() {
     setPlay(!play);
   }
 
-  // ponhamos o setAtualiza pq temos que mandar pra function e usar ele la, por isso criamos uma const
-  function renderItem({item}) {
-    return <Item data={item} setList={setList} setAtualiza={setAtualiza} />;
+  function TouchClique() {
+    setCliqueLista(!cliqueLista);
   }
 
+  // ponhamos o setAtualiza pq temos que mandar pra function e usar ele la, por isso criamos uma const
+  function renderItem({item}) {
+    return (
+      <Item
+        data={item}
+        setList={setList}
+        setAtualiza={setAtualiza}
+        TouchClique={TouchClique}
+      />
+    );
+  }
+  
   return (
     <View style={Styles.container}>
       <View style={Styles.body}>
-        <TouchableOpacity>
-          <FlatList
-            data={list}
-            renderItem={renderItem}
-            keyExtractor={item => item.id}
-          />
-        </TouchableOpacity>
+        <FlatList
+          data={list}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
       </View>
 
-      <LinearGradient style={Styles.bottom} colors={['#BFCDE0', '#5D5D81']}>
-        <View style={Styles.linha2}>
-          <Text style={Styles.text}>00:00</Text>
-          <Slider
-            containerStyle={{flex: 1, marginRight: '6%', marginLeft: '6%'}}
-            thumbTintColor="#FFFFFF"
-            value={2}
-            minimumValue={1}
-            maximumValue={5}
-            step={2}
-            trackClickable={true}
-            maximumTrackTintColor="#e9f0ef"
-            minimumTrackTintColor="#fff"
-          />
-          <Text style={Styles.texto}>00:45</Text>
-        </View>
+      {cliqueLista ? (
+        <LinearGradient style={Styles.bottom} colors={['#BFCDE0', '#5D5D81']}>
+          <View style={Styles.linha2}>
+            <Text style={Styles.text}>00:00</Text>
+            <Slider
+              containerStyle={{flex: 1, marginRight: '6%', marginLeft: '6%'}}
+              thumbTintColor="#FFFFFF"
+              value={2}
+              minimumValue={1}
+              maximumValue={5}
+              step={2}
+              trackClickable={true}
+              maximumTrackTintColor="#e9f0ef"
+              minimumTrackTintColor="#fff"
+            />
+            <Text style={Styles.texto}>00:45</Text>
+          </View>
 
-        <View style={Styles.linha}>
-          <TouchableOpacity>
-            <Ionicons name="ios-repeat-outline" size={35} color={'#fff'} />
-          </TouchableOpacity>
+          <View style={Styles.linha}>
+            <TouchableOpacity>
+              <Ionicons name="ios-repeat-outline" size={35} color={'#fff'} />
+            </TouchableOpacity>
 
-          <TouchableOpacity>
-            <AntDesign name="banckward" size={30} color={'#fff'} />
-          </TouchableOpacity>
+            <TouchableOpacity>
+              <AntDesign name="banckward" size={30} color={'#fff'} />
+            </TouchableOpacity>
 
-          <TouchableOpacity onPress={TouchPlay}>
-            {play ? (
-              <Foundation name="pause" size={69} color={'#fff'} />
-            ) : (
-              <AntDesign name="play" size={69} color={'#fff'} />
-            )}
-          </TouchableOpacity>
+            <TouchableOpacity onPress={TouchPlay}>
+              {play ? (
+                <Foundation name="pause" size={69} color={'#fff'} />
+              ) : (
+                <AntDesign name="play" size={69} color={'#fff'} />
+              )}
+            </TouchableOpacity>
 
-          <TouchableOpacity>
-            <AntDesign name="forward" size={30} color={'#fff'} />
-          </TouchableOpacity>
+            <TouchableOpacity>
+              <AntDesign name="forward" size={30} color={'#fff'} />
+            </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Text style={Styles.once}>1x</Text>
-          </TouchableOpacity>
-        </View>
-      </LinearGradient>
+            <TouchableOpacity>
+              <Text style={Styles.once}>1x</Text>
+            </TouchableOpacity>
+          </View>
+        </LinearGradient>
+      ) : null}
     </View>
   );
 }

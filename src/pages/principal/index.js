@@ -95,8 +95,6 @@ export default function Principal() {
 
   async function SalvarBanco() {
     const date = new Date().toLocaleString();
-    // const statResult = await stat('/test.mp4');
-    // console.log('file size: ' + statResult.size);
     await sqlite.query(
       `INSERT INTO audios (title, data_hora, tamanho, tags, duracao, caminho) VALUES ("${nome}", "${date}", "", "${opcao}", "${tempo.recordTime}", "") `,
     );
