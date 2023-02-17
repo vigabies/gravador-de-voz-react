@@ -220,8 +220,6 @@ const Styles = StyleSheet.create({
   },
 
   // =========================== LISTA BOTAO
-
- 
 });
 
 export default Styles;

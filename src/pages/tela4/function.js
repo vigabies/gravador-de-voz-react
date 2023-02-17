@@ -25,6 +25,7 @@ export function Navegar(navigation) {
 export function Item({data, setList, setAtualiza, TouchClique}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [nome, setNome] = useState('');
+  const [cor, setCor] = useState(true);
 
   //SEMPRE FAZER COM SQLITE, LEMBRA DE PUXAR COMO $
   async function deleteId(id_audio) {
@@ -41,7 +42,7 @@ export function Item({data, setList, setAtualiza, TouchClique}) {
         <Text style={Styles.title}>{data.title}</Text>
 
         <View style={Styles.linha4}>
-          <Text style={Styles.subtext}>{data.data_hora}</Text>
+          <Text style={Styles.subtext}>{data.data}</Text>
           <Text style={Styles.subtext}>{data.hora}</Text>
           <Text style={Styles.subtext}>{data.tamanho}</Text>
 
