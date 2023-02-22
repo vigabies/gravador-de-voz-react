@@ -25,7 +25,7 @@ export function Navegar(navigation) {
 export function Item({data, setList, setAtualiza, TouchClique}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [nome, setNome] = useState('');
-  const [cor, setCor] = useState(true);
+
 
   //SEMPRE FAZER COM SQLITE, LEMBRA DE PUXAR COMO $
   async function deleteId(id_audio) {
@@ -40,7 +40,6 @@ export function Item({data, setList, setAtualiza, TouchClique}) {
     <View style={Styles.linha3}>
       <TouchableOpacity onPress={TouchClique}>
         <Text style={Styles.title}>{data.title}</Text>
-
         <View style={Styles.linha4}>
           <Text style={Styles.subtext}>{data.data}</Text>
           <Text style={Styles.subtext}>{data.hora}</Text>
@@ -56,14 +55,11 @@ export function Item({data, setList, setAtualiza, TouchClique}) {
             </TouchableOpacity>
           </View>
         </View>
-
         <View style={Styles.linha4}>
           <Text style={Styles.tag}>{data.tags}</Text>
           <Text style={Styles.time}>{data.duracao}</Text>
         </View>
-
         <View style={Styles.linhav} />
-
         <Modal
           animationType="slide"
           transparent={true}
