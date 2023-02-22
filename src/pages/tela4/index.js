@@ -47,6 +47,7 @@ export default function Tela4() {
         setList={setList}
         setAtualiza={setAtualiza}
         TouchClique={TouchClique}
+        Exibir={Exibir}
       />
     );
   }

@@ -26,7 +26,6 @@ export function Item({data, setList, setAtualiza, TouchClique}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [nome, setNome] = useState('');
 
-
   //SEMPRE FAZER COM SQLITE, LEMBRA DE PUXAR COMO $
   async function deleteId(id_audio) {
     await sqlite.query(`DELETE FROM audios WHERE id_audio = ${id_audio}`);
@@ -38,7 +37,8 @@ export function Item({data, setList, setAtualiza, TouchClique}) {
 
   return (
     <View style={Styles.linha3}>
-      <TouchableOpacity onPress={TouchClique}>
+      
+      <TouchableOpacity onPress={TouchClique} >
         <Text style={Styles.title}>{data.title}</Text>
         <View style={Styles.linha4}>
           <Text style={Styles.subtext}>{data.data}</Text>
