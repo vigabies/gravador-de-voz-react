@@ -22,7 +22,7 @@ export function Navegar(navigation) {
 
 //a gente puxou la do index o setAtualiza
 
-export function Item({data, setList, setAtualiza, TouchClique}) {
+export function Item({data, setAtualiza, TouchClique}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [nome, setNome] = useState('');
 
@@ -35,10 +35,18 @@ export function Item({data, setList, setAtualiza, TouchClique}) {
     setAtualiza(new Date());
   }
 
+  // lembrar de deixar sempre maiusculo e puxar  do id_audio pois é daquela tabela
+
+  async function update(id_audio) {
+    await sqlite.query(
+      `UPDATE audios SET title="${nome}" WHERE id_audio = ${id_audio}`,
+    );
+    setAtualiza(await sqlite.query('SELECT * FROM audios'));
+  }
+
   return (
     <View style={Styles.linha3}>
-      
-      <TouchableOpacity onPress={TouchClique} >
+      <TouchableOpacity onPress={TouchClique}>
         <Text style={Styles.title}>{data.title}</Text>
         <View style={Styles.linha4}>
           <Text style={Styles.subtext}>{data.data}</Text>
@@ -101,7 +109,7 @@ export function Item({data, setList, setAtualiza, TouchClique}) {
                     </LinearGradient>
                   </TouchableOpacity>
 
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => update(data.id_audio)}>
                     <LinearGradient
                       colors={['#BFCDE0', '#5D5D81']}
                       style={Styles.salvar}>
