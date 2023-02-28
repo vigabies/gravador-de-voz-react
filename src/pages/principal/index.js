@@ -46,14 +46,12 @@ export default function Principal() {
   });
 
   const [tamanhoArq, setTamanhoArq] = useState();
-
   const [gravando, setGravando] = useState(false);
 
   async function onStartRecord() {
     setGravando(true);
 
     // o if é a permissão para gravar audio.
-
     if (Platform.OS === 'android') {
       try {
         const grants = await PermissionsAndroid.requestMultiple([
@@ -84,7 +82,6 @@ export default function Principal() {
     }
 
     //o e puxa as informações e retorna para a devida função
-
     const result = await audioRecorderPlayer.startRecorder();
     audioRecorderPlayer.addRecordBackListener(e => {
       setTempo({
@@ -110,7 +107,6 @@ export default function Principal() {
 
   // o async significa que nossa função vai retornar um de cada vez, colocamos
   // ele na frente para o await funcionar
-
   async function onStopRecord() {
     setGravando(false);
     const result = await audioRecorderPlayer.stopRecorder();
@@ -120,8 +116,7 @@ export default function Principal() {
       recordTime: tempo.recordTime,
     });
 
-    //conferir math random 
-    const nomeArquivo = Math.random(0, 1000);
+    const nomeArquivo = Math.floor(Math.random() * 2000);
 
     await RNFS.copyFile(
       result,
@@ -135,7 +130,6 @@ export default function Principal() {
       });
 
     const {size} = await RNFS.stat(RNFS.DocumentDirectoryPath + nomeArquivo);
-
     setTamanhoArq(size);
 
     //setModalVisible serve para mostrar o modal
@@ -263,7 +257,6 @@ export default function Principal() {
                     />
 
                     {/* quando tem () => o final tem que ter parenteses */}
-
                     <View style={Styles.linhamodal}>
                       <TouchableOpacity onPress={SalvarBanco}>
                         <LinearGradient

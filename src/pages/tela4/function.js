@@ -22,21 +22,25 @@ export function Navegar(navigation) {
 
 //a gente puxou la do index o setAtualiza
 
-export function Item({data, setAtualiza, TouchClique}) {
+export function Item({
+  data,
+  setAtualiza,
+  TouchClique,
+  cliqueLista,
+  setCliqueLista,
+}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [nome, setNome] = useState('');
 
   //SEMPRE FAZER COM SQLITE, LEMBRA DE PUXAR COMO $
   async function deleteId(id_audio) {
     await sqlite.query(`DELETE FROM audios WHERE id_audio = ${id_audio}`);
-
     // um jeito de fazer o atualiza página é desse jeito
     // setList(await sqlite.query('SELECT * FROM audios'));
     setAtualiza(new Date());
   }
 
   // lembrar de deixar sempre maiusculo e puxar  do id_audio pois é daquela tabela
-
   async function update(id_audio) {
     await sqlite.query(
       `UPDATE audios SET title="${nome}" WHERE id_audio = ${id_audio}`,
@@ -46,7 +50,14 @@ export function Item({data, setAtualiza, TouchClique}) {
 
   return (
     <View style={Styles.linha3}>
-      <TouchableOpacity onPress={TouchClique}>
+      <TouchableOpacity
+        onPress={() => setCliqueLista(data.id_audio)}
+        style={[
+          Styles.backg2,
+          cliqueLista === data.id_audio ? Styles.backg : false,
+          // puxando o exibir player(PAI) para mudar a cor de cada item selecionado pelo ID(filhos) e aparecer o player
+          // OBS: quando for chamar algo(do BD ou outro lugar), não colocar entre aspas pq ñ estará funcionando, será considerado uma palavra
+        ]}>
         <Text style={Styles.title}>{data.title}</Text>
         <View style={Styles.linha4}>
           <Text style={Styles.subtext}>{data.data}</Text>

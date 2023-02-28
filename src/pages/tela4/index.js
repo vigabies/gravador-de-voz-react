@@ -16,7 +16,7 @@ export default function Tela4() {
   const [play, setPlay] = useState(false);
   const [list, setList] = useState([]);
   const [atualiza, setAtualiza] = useState(false);
-  const [cliqueLista, setCliqueLista] = useState(false);
+  const [cliqueLista, setCliqueLista] = useState(false); //chama player
 
   useEffect(() => {
     async function getData() {
@@ -35,10 +35,6 @@ export default function Tela4() {
     setCliqueLista(!cliqueLista);
   }
 
-  function Exibir() {
-    setExibirPLayer(!exibirPlayer);
-  }
-
   // ponhamos o setAtualiza pq temos que mandar pra function e usar ele la, por isso criamos uma const
   function renderItem({item}) {
     return (
@@ -47,7 +43,8 @@ export default function Tela4() {
         setList={setList}
         setAtualiza={setAtualiza}
         TouchClique={TouchClique}
-        Exibir={Exibir}
+        cliqueLista={cliqueLista}
+        setCliqueLista={setCliqueLista}
       />
     );
   }
@@ -59,7 +56,6 @@ export default function Tela4() {
           data={list}
           renderItem={renderItem}
           keyExtractor={item => item.id}
-          style={[Styles.backg2, cliqueLista ? Styles.backg : false]}
         />
       </View>
 
