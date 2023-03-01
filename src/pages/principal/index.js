@@ -122,15 +122,16 @@ export default function Principal() {
       result,
       RNFS.DocumentDirectoryPath + `${nomeArquivo}.mp4`,
     )
-      .then(success => {
+      .then(async success => {
         console.log('file moved!', success);
+        const {size} = await RNFS.stat(
+          RNFS.DocumentDirectoryPath + nomeArquivo,
+        );
+        setTamanhoArq(size);
       })
       .catch(err => {
         console.log('Error: ' + err.message);
       });
-
-    const {size} = await RNFS.stat(RNFS.DocumentDirectoryPath + nomeArquivo);
-    setTamanhoArq(size);
 
     //setModalVisible serve para mostrar o modal
     setModalVisible(true);
