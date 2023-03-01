@@ -15,6 +15,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 import sqlite from '../../classes/sqlite';
+import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 
 export function Navegar(navigation) {
   navigation.navigate('Principal');
@@ -47,6 +48,8 @@ export function Item({
     );
     setAtualiza(await sqlite.query('SELECT * FROM audios'));
   }
+
+  
 
   return (
     <View style={Styles.linha3}>

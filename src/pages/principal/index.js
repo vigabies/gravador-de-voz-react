@@ -137,6 +137,23 @@ export default function Principal() {
     setModalVisible(true);
   }
 
+  async function onStartPlay() {
+    console.log(onStartPlay);
+    const msg = await audioRecorderPlayer.startPlayer();
+    console.log(msg);
+    this.audioRecorderPlayer.addPlayBackListener(e => {
+      this.setState({
+        currentPositionSec: e.currentPosition,
+        currentDurationSec: e.duration,
+        playTime: this.audioRecorderPlayer.mmssss(
+          Math.floor(e.currentPosition),
+        ),
+        duration: this.audioRecorderPlayer.mmssss(Math.floor(e.duration)),
+      });
+      return;
+    });
+  }
+
   const navegation = useNavigation();
   const navegar = tela => {
     navegation.navigate(tela, {});

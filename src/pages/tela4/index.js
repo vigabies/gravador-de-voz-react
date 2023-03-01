@@ -9,6 +9,7 @@ import Styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import {Slider} from '@miblanchard/react-native-slider';
 import sqlite from '../../classes/sqlite';
+import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 
 export default function Tela4() {
   //o estado vai ser falso pq o que ja tava funcionando o verdadeiro
@@ -48,6 +49,8 @@ export default function Tela4() {
       />
     );
   }
+
+  
 
   return (
     <View style={Styles.container}>
