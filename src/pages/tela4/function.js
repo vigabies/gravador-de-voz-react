@@ -49,8 +49,6 @@ export function Item({
     setAtualiza(await sqlite.query('SELECT * FROM audios'));
   }
 
-  
-
   return (
     <View style={Styles.linha3}>
       <TouchableOpacity
@@ -65,18 +63,24 @@ export function Item({
         <View style={Styles.linha4}>
           <Text style={Styles.subtext}>{data.data}</Text>
           <Text style={Styles.subtext}>{data.hora}</Text>
-          <Text style={Styles.subtext}>{data.tamanho}</Text>
+          <Text style={Styles.subtext}>{data.tamanho} kB</Text>
 
-          <View style={Styles.linha5}>
-            <TouchableOpacity onPress={() => setModalVisibleIcon(true)}>
-              <Entypo name="dots-three-vertical" size={25} color={'#3B3355'} />
-            </TouchableOpacity>
+         
+            <View style={Styles.linha5}>
+              <TouchableOpacity onPress={() => setModalVisibleIcon(true)}>
+                <Entypo
+                  name="dots-three-vertical"
+                  size={25}
+                  color={'#3B3355'}
+                />
+              </TouchableOpacity>
 
-            <TouchableOpacity>
-              <Feather name="scissors" size={25} color={'#3B3355'} />
-            </TouchableOpacity>
+              <TouchableOpacity>
+                <Feather name="scissors" size={25} color={'#3B3355'} />
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
+        
         <View style={Styles.linha4}>
           <Text style={Styles.tag}>{data.tags}</Text>
           <Text style={Styles.time}>{data.duracao}</Text>

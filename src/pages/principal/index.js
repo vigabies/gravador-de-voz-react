@@ -125,8 +125,9 @@ export default function Principal() {
       .then(async success => {
         console.log('file moved!', success);
         const {size} = await RNFS.stat(
-          RNFS.DocumentDirectoryPath + nomeArquivo,
+          RNFS.DocumentDirectoryPath + `${nomeArquivo}.mp4`,
         );
+
         setTamanhoArq(size);
       })
       .catch(err => {
@@ -135,23 +136,6 @@ export default function Principal() {
 
     //setModalVisible serve para mostrar o modal
     setModalVisible(true);
-  }
-
-  async function onStartPlay() {
-    console.log(onStartPlay);
-    const msg = await audioRecorderPlayer.startPlayer();
-    console.log(msg);
-    this.audioRecorderPlayer.addPlayBackListener(e => {
-      this.setState({
-        currentPositionSec: e.currentPosition,
-        currentDurationSec: e.duration,
-        playTime: this.audioRecorderPlayer.mmssss(
-          Math.floor(e.currentPosition),
-        ),
-        duration: this.audioRecorderPlayer.mmssss(Math.floor(e.duration)),
-      });
-      return;
-    });
   }
 
   const navegation = useNavigation();

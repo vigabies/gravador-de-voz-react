@@ -11,6 +11,8 @@ import {Slider} from '@miblanchard/react-native-slider';
 import sqlite from '../../classes/sqlite';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
 
+const audioRecorderPlayer = new AudioRecorderPlayer();
+
 export default function Tela4() {
   //o estado vai ser falso pq o que ja tava funcionando o verdadeiro
   //quando clicar vai para o outro
@@ -18,6 +20,7 @@ export default function Tela4() {
   const [list, setList] = useState([]);
   const [atualiza, setAtualiza] = useState(false);
   const [cliqueLista, setCliqueLista] = useState(false); //chama player
+  const [recording, setRecording] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -50,7 +53,31 @@ export default function Tela4() {
     );
   }
 
-  
+  async function onStartPlay() {
+    const msg = await audioRecorderPlayer.startPlayer();
+    console.log(msg);
+    this.audioRecorderPlayer.addPlayBackListener(e => {
+      this.setState({
+        currentPositionSec: e.currentPosition,
+        currentDurationSec: e.duration,
+        playTime: this.audioRecorderPlayer.mmssss(
+          Math.floor(e.currentPosition),
+        ),
+        duration: this.audioRecorderPlayer.mmssss(Math.floor(e.duration)),
+      });
+      return;
+    });
+  }
+
+  async function onPausePlay() {
+    await this.audioRecorderPlayer.pausePlayer();
+  }
+
+  async function onStopPlay() {
+    console.log('onStopPlay');
+    this.audioRecorderPlayer.stopPlayer();
+    this.audioRecorderPlayer.removePlayBackListener();
+  }
 
   return (
     <View style={Styles.container}>
@@ -85,8 +112,8 @@ export default function Tela4() {
               <Ionicons name="ios-repeat-outline" size={35} color={'#fff'} />
             </TouchableOpacity>
 
-            <TouchableOpacity>
-              <AntDesign name="banckward" size={30} color={'#fff'} />
+            <TouchableOpacity onPress={recording ? onStopPlay : onStartPlay}>
+              <AntDesign name="banckward" size={30} color={'red'} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={TouchPlay}>
