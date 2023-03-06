@@ -70,14 +70,16 @@ export default function Tela4() {
   }
 
   async function onPausePlay() {
-    await this.audioRecorderPlayer.pausePlayer();
+    await audioRecorderPlayer.pausePlayer();
+
+    setRecording(true);
   }
 
-  async function onStopPlay() {
-    console.log('onStopPlay');
-    this.audioRecorderPlayer.stopPlayer();
-    this.audioRecorderPlayer.removePlayBackListener();
-  }
+  // async function onStopPlay() {
+  //   console.log('onStopPlay');
+  //   this.audioRecorderPlayer.stopPlayer();
+  //   this.audioRecorderPlayer.removePlayBackListener();
+  // }
 
   return (
     <View style={Styles.container}>
@@ -112,7 +114,7 @@ export default function Tela4() {
               <Ionicons name="ios-repeat-outline" size={35} color={'#fff'} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={recording ? onStopPlay : onStartPlay}>
+            <TouchableOpacity onPress={recording ? onPausePlay : onStartPlay}>
               <AntDesign name="banckward" size={30} color={'red'} />
             </TouchableOpacity>
 
