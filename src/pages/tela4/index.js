@@ -54,6 +54,7 @@ export default function Tela4() {
   }
 
   async function onStartPlay() {
+    setRecording(true);
     const msg = await audioRecorderPlayer.startPlayer();
     console.log(msg);
     this.audioRecorderPlayer.addPlayBackListener(e => {
@@ -70,16 +71,9 @@ export default function Tela4() {
   }
 
   async function onPausePlay() {
+    setRecording(false);
     await audioRecorderPlayer.pausePlayer();
-
-    setRecording(true);
   }
-
-  // async function onStopPlay() {
-  //   console.log('onStopPlay');
-  //   this.audioRecorderPlayer.stopPlayer();
-  //   this.audioRecorderPlayer.removePlayBackListener();
-  // }
 
   return (
     <View style={Styles.container}>
