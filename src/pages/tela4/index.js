@@ -32,7 +32,7 @@ export default function Tela4() {
   }, [atualiza]);
 
   function TouchPlay() {
-    setPlay(!play);
+    setRecording(!recording);
   }
 
   function TouchClique() {
@@ -108,12 +108,12 @@ export default function Tela4() {
               <Ionicons name="ios-repeat-outline" size={35} color={'#fff'} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={recording ? onPausePlay : onStartPlay}>
-              <AntDesign name="banckward" size={30} color={'red'} />
+            <TouchableOpacity>
+              <AntDesign name="banckward" size={30} color={'#fff'} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={TouchPlay}>
-              {play ? (
+            <TouchableOpacity onPress={recording ? onPausePlay : onStartPlay}>
+              {recording ? (
                 <Foundation name="pause" size={69} color={'#fff'} />
               ) : (
                 <AntDesign name="play" size={69} color={'#fff'} />
