@@ -49,6 +49,8 @@ export function Item({
     setAtualiza(await sqlite.query('SELECT * FROM audios'));
   }
 
+  //codigo para dar next no player, mas n ta funcionando pq n esta chamando ainda
+
   async function idTeste(index) {
     index = _.findIndex(function (data) {
       return data.id_audio === setExibirPLayer;
