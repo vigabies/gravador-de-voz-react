@@ -49,6 +49,16 @@ export function Item({
     setAtualiza(await sqlite.query('SELECT * FROM audios'));
   }
 
+  async function idTeste(index) {
+    index = _.findIndex(function (data) {
+      return data.id_audio === setExibirPLayer;
+    });
+
+    index = _.indexOf(_.pluck('id_audio'), data);
+
+    console.log(index);
+  }
+
   return (
     <View style={Styles.linha3}>
       <TouchableOpacity
@@ -65,22 +75,17 @@ export function Item({
           <Text style={Styles.subtext}>{data.hora}</Text>
           <Text style={Styles.subtext}>{data.tamanho} kB</Text>
 
-         
-            <View style={Styles.linha5}>
-              <TouchableOpacity onPress={() => setModalVisibleIcon(true)}>
-                <Entypo
-                  name="dots-three-vertical"
-                  size={25}
-                  color={'#3B3355'}
-                />
-              </TouchableOpacity>
+          <View style={Styles.linha5}>
+            <TouchableOpacity onPress={() => setModalVisibleIcon(true)}>
+              <Entypo name="dots-three-vertical" size={25} color={'#3B3355'} />
+            </TouchableOpacity>
 
-              <TouchableOpacity>
-                <Feather name="scissors" size={25} color={'#3B3355'} />
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity>
+              <Feather name="scissors" size={25} color={'#3B3355'} />
+            </TouchableOpacity>
           </View>
-        
+        </View>
+
         <View style={Styles.linha4}>
           <Text style={Styles.tag}>{data.tags}</Text>
           <Text style={Styles.time}>{data.duracao}</Text>
@@ -119,13 +124,13 @@ export function Item({
                 />
 
                 <View style={Styles.linhadelete}>
-                  <TouchableOpacity onPress={() => setModalVisibleIcon(false)}>
+                  {/* <TouchableOpacity onPress={() => setModalVisibleIcon(false)}>
                     <LinearGradient
                       colors={['#BFCDE0', '#5D5D81']}
                       style={Styles.salvar}>
                       <Text style={Styles.salvarText}>Salvar</Text>
                     </LinearGradient>
-                  </TouchableOpacity>
+                  </TouchableOpacity> */}
 
                   <TouchableOpacity onPress={() => update(data.id_audio)}>
                     <LinearGradient
