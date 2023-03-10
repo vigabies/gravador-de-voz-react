@@ -6,6 +6,7 @@ import {
   Modal,
   TextInput,
   TouchableWithoutFeedback,
+  StyleSheet,
 } from 'react-native';
 import Styles from './styles';
 import Feather from 'react-native-vector-icons/Feather';
@@ -15,22 +16,78 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 import sqlite from '../../classes/sqlite';
-import AudioRecorderPlayer from 'react-native-audio-recorder-player';
+import {Slider} from '@miblanchard/react-native-slider';
+
+const borderWidth = 4;
+const trackMarkStyles = StyleSheet.create({
+  activeMark: {
+    borderColor: 'red',
+    borderWidth,
+    left: -borderWidth / 2,
+  },
+  inactiveMark: {
+    borderColor: 'grey',
+    borderWidth,
+    left: -borderWidth / 2,
+  },
+});
+
+const SliderContainer = ({
+  caption,
+  children,
+  sliderValue,
+  trackMarks,
+  vertical,
+}) => {
+  const [value, setValue] = useState(sliderValue);
+  let renderTrackMarkComponent;
+
+  if (trackMarks?.length && (!Array.isArray(value) || value?.length === 1)) {
+    renderTrackMarkComponent = index => {
+      const currentMarkValue = trackMarks[index];
+      const currentSliderValue =
+        value || (Array.isArray(value) && value[0]) || 0;
+      const style =
+        currentMarkValue > Math.max(currentSliderValue)
+          ? trackMarkStyles.activeMark
+          : trackMarkStyles.inactiveMark;
+      return <View style={style} />;
+    };
+  }
+
+  const renderChildren = () => {
+    return React.Children.map(children, child => {
+      if (!!child && child.type === Slider) {
+        return React.cloneElement(child, {
+          onValueChange: setValue,
+          renderTrackMarkComponent,
+          trackMarks,
+          value,
+        });
+      }
+
+      return child;
+    });
+  };
+  return (
+    <View style={Styles.sliderContainer}>
+      <View style={Styles.titleContainer}>
+        <Text>{caption}</Text>
+        <Text>{Array.isArray(value) ? value.join(' - ') : value}</Text>
+      </View>
+      {renderChildren()}
+    </View>
+  );
+};
 
 export function Navegar(navigation) {
   navigation.navigate('Principal');
 }
 
 //a gente puxou la do index o setAtualiza
-
-export function Item({
-  data,
-  setAtualiza,
-  TouchClique,
-  cliqueLista,
-  setCliqueLista,
-}) {
+export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
+  const [modalScissors, setModalScissors] = useState(false);
   const [nome, setNome] = useState('');
 
   //SEMPRE FAZER COM SQLITE, LEMBRA DE PUXAR COMO $
@@ -70,7 +127,9 @@ export function Item({
               <Entypo name="dots-three-vertical" size={25} color={'#3B3355'} />
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setModalScissors(true)}
+              style={{backgroundColor: '#ddd', height: 50, width: 50}}>
               <Feather name="scissors" size={25} color={'#3B3355'} />
             </TouchableOpacity>
           </View>
@@ -81,6 +140,7 @@ export function Item({
           <Text style={Styles.time}>{data.duracao}</Text>
         </View>
         <View style={Styles.linhav} />
+
         <Modal
           animationType="slide"
           transparent={true}
@@ -127,6 +187,64 @@ export function Item({
                       colors={['#BFCDE0', '#5D5D81']}
                       style={Styles.cancelar}>
                       <MaterialIcons name="delete" size={25} color="#fff" />
+                    </LinearGradient>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalScissors}
+          enum="overFullScreen"
+          onRequestClose={() => {
+            setModalScissors(!setModalScissors);
+          }}>
+          <TouchableWithoutFeedback
+            onPress={() => setModalScissors(!modalScissors)}>
+            <View style={Styles.modalOpen}>
+              <View style={Styles.modalViewEditar}>
+                <TouchableOpacity
+                  style={Styles.buttonClose}
+                  onPress={() => setModalVisibleIcon(false)}>
+                  <LinearGradient
+                    colors={['#BFCDE0', '#5D5D81']}
+                    style={Styles.buttonCloseStyles}>
+                    <AntDesign name="close" size={20} color="#fff" />
+                  </LinearGradient>
+                </TouchableOpacity>
+
+                <SliderContainer
+                  caption="<Slider/> 2 thumbs, min, max, and custom tint"
+                  sliderValue={[6, 18]}>
+                  <Slider
+                    animateTransitions
+                    maximumTrackTintColor="#d3d3d3"
+                    maximumValue={20}
+                    minimumTrackTintColor="#1fb28a"
+                    minimumValue={4}
+                    step={2}
+                    thumbTintColor="#1a9274"
+                  />
+                </SliderContainer>
+
+                <View style={Styles.linhadelete}>
+                  <TouchableOpacity>
+                    <LinearGradient
+                      colors={['#BFCDE0', '#5D5D81']}
+                      style={Styles.salvar}>
+                      <Text style={Styles.salvarText}>Back</Text>
+                    </LinearGradient>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity>
+                    <LinearGradient
+                      colors={['#BFCDE0', '#5D5D81']}
+                      style={Styles.salvar}>
+                      <Text style={Styles.salvarText}>Done</Text>
                     </LinearGradient>
                   </TouchableOpacity>
                 </View>

@@ -221,13 +221,21 @@ const Styles = StyleSheet.create({
   },
 
   // =========================== LISTA BOTAO
-
   backg: {
     backgroundColor: '#dddd',
   },
 
   backg2: {
     backgroundColor: 'white',
+  },
+
+  // =========================== modal Editar
+  modalViewEditar: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    width: 300,
+    height: 300,
+    alignItems: 'center',
   },
 });
 

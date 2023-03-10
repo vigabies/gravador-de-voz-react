@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Item} from './function';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import Foundation from 'react-native-vector-icons/Foundation';
 import Styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
@@ -120,7 +119,7 @@ export default function Tela4() {
         <FlatList
           data={list}
           renderItem={renderItem}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.id_audio}
         />
       </View>
 
