@@ -224,10 +224,10 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
                     animateTransitions
                     maximumTrackTintColor="#d3d3d3"
                     maximumValue={20}
-                    minimumTrackTintColor="#1fb28a"
+                    minimumTrackTintColor="#808080"
                     minimumValue={4}
                     step={2}
-                    thumbTintColor="#1a9274"
+                    thumbTintColor="#808080"
                   />
                 </SliderContainer>
 

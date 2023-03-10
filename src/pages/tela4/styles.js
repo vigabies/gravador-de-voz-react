@@ -222,7 +222,7 @@ const Styles = StyleSheet.create({
 
   // =========================== LISTA BOTAO
   backg: {
-    backgroundColor: '#dddd',
+    backgroundColor: '#E6E6FA',
   },
 
   backg2: {
@@ -231,7 +231,7 @@ const Styles = StyleSheet.create({
 
   // =========================== modal Editar
   modalViewEditar: {
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
     borderRadius: 10,
     width: 300,
     height: 300,
