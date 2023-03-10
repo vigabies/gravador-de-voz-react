@@ -223,7 +223,7 @@ const Styles = StyleSheet.create({
   // =========================== LISTA BOTAO
 
   backg: {
-    backgroundColor: 'rgb(255, 250, 249)',
+    backgroundColor: '#dddd',
   },
 
   backg2: {

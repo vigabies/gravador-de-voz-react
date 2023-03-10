@@ -42,11 +42,12 @@ export default function Principal() {
 
   const [tempo, setTempo] = useState({
     recordSecs: 0,
-    recordTime: '00:00:00',
+    recordTime: '00:00',
   });
 
   const [tamanhoArq, setTamanhoArq] = useState();
   const [gravando, setGravando] = useState(false);
+  const [caminho, setCaminho] = useState('');
 
   async function onStartRecord() {
     setGravando(true);
@@ -86,7 +87,9 @@ export default function Principal() {
     audioRecorderPlayer.addRecordBackListener(e => {
       setTempo({
         recordSecs: e.currentPosition,
-        recordTime: audioRecorderPlayer.mmssss(Math.floor(e.currentPosition)),
+        recordTime: audioRecorderPlayer.mmss(
+          Math.floor(e.currentPosition / 1000),
+        ),
       });
       return;
     });
@@ -98,7 +101,9 @@ export default function Principal() {
     const Time = new Date().toLocaleTimeString();
 
     await sqlite.query(
-      `INSERT INTO audios (title, data, hora, tamanho, tags, duracao, caminho) VALUES ("${nome}", "${date}", "${Time}", "${tamanhoArq}", "${opcao}", "${tempo.recordTime}", "") `,
+      `INSERT INTO audios (title, data, hora, tamanho, tags, duracao, caminho) VALUES ("${nome}", "${date}", "${Time}", "${tamanhoArq}", "${opcao}", "${
+        tempo.recordTime
+      }", "${RNFS.DocumentDirectoryPath + `${caminho}.mp4`}") `,
     );
     //abre o outro modal, o de parabens
     setModalVisibleTwo(true);
@@ -123,7 +128,7 @@ export default function Principal() {
       RNFS.DocumentDirectoryPath + `${nomeArquivo}.mp4`,
     )
       .then(async success => {
-        console.log('file moved!', success);
+        setCaminho(nomeArquivo);
         const {size} = await RNFS.stat(
           RNFS.DocumentDirectoryPath + `${nomeArquivo}.mp4`,
         );

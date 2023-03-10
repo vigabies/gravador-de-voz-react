@@ -49,18 +49,6 @@ export function Item({
     setAtualiza(await sqlite.query('SELECT * FROM audios'));
   }
 
-  //codigo para dar next no player, mas n ta funcionando pq n esta chamando ainda
-
-  async function idTeste(index) {
-    index = _.findIndex(function (data) {
-      return data.id_audio === setExibirPLayer;
-    });
-
-    index = _.indexOf(_.pluck('id_audio'), data);
-
-    console.log(index);
-  }
-
   return (
     <View style={Styles.linha3}>
       <TouchableOpacity
@@ -126,14 +114,6 @@ export function Item({
                 />
 
                 <View style={Styles.linhadelete}>
-                  {/* <TouchableOpacity onPress={() => setModalVisibleIcon(false)}>
-                    <LinearGradient
-                      colors={['#BFCDE0', '#5D5D81']}
-                      style={Styles.salvar}>
-                      <Text style={Styles.salvarText}>Salvar</Text>
-                    </LinearGradient>
-                  </TouchableOpacity> */}
-
                   <TouchableOpacity onPress={() => update(data.id_audio)}>
                     <LinearGradient
                       colors={['#BFCDE0', '#5D5D81']}

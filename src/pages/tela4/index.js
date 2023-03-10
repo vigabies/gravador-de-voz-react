@@ -10,17 +10,23 @@ import LinearGradient from 'react-native-linear-gradient';
 import {Slider} from '@miblanchard/react-native-slider';
 import sqlite from '../../classes/sqlite';
 import AudioRecorderPlayer from 'react-native-audio-recorder-player';
+import _ from 'lodash';
 
 const audioRecorderPlayer = new AudioRecorderPlayer();
 
 export default function Tela4() {
   //o estado vai ser falso pq o que ja tava funcionando o verdadeiro
   //quando clicar vai para o outro
-  const [play, setPlay] = useState(false);
   const [list, setList] = useState([]);
   const [atualiza, setAtualiza] = useState(false);
   const [cliqueLista, setCliqueLista] = useState(false); //chama player
   const [recording, setRecording] = useState(false);
+  const [positionSlide, setPositionSlide] = useState({
+    currentPositionSec: 1,
+    currentDurationSec: 20,
+    playTime: '00:00',
+    duration: '00:00',
+  });
 
   useEffect(() => {
     async function getData() {
@@ -37,6 +43,39 @@ export default function Tela4() {
 
   function TouchClique() {
     setCliqueLista(!cliqueLista);
+  }
+
+  //o underline é o lodash
+  async function idNext() {
+    try {
+      console.log(cliqueLista);
+      let index;
+      _.findIndex(list, (valor, i) => {
+        if (valor.id_audio === cliqueLista) {
+          index = i;
+        }
+      });
+      setCliqueLista(list[index + 1].id_audio);
+      console.log(index);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function idBack() {
+    try {
+      console.log(cliqueLista);
+      let index;
+      _.findIndex(list, (valor, i) => {
+        if (valor.id_audio === cliqueLista) {
+          index = i;
+        }
+      });
+      setCliqueLista(list[index - 1].id_audio);
+      console.log(index);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // ponhamos o setAtualiza pq temos que mandar pra function e usar ele la, por isso criamos uma const
@@ -57,14 +96,14 @@ export default function Tela4() {
     setRecording(true);
     const msg = await audioRecorderPlayer.startPlayer();
     console.log(msg);
-    this.audioRecorderPlayer.addPlayBackListener(e => {
-      this.setState({
+    audioRecorderPlayer.addPlayBackListener(e => {
+      setPositionSlide({
         currentPositionSec: e.currentPosition,
         currentDurationSec: e.duration,
-        playTime: this.audioRecorderPlayer.mmssss(
-          Math.floor(e.currentPosition),
+        playTime: audioRecorderPlayer.mmss(
+          Math.floor(e.currentPosition / 1000),
         ),
-        duration: this.audioRecorderPlayer.mmssss(Math.floor(e.duration)),
+        duration: audioRecorderPlayer.mmss(Math.floor(e.duration / 1000)),
       });
       return;
     });
@@ -88,27 +127,23 @@ export default function Tela4() {
       {cliqueLista ? (
         <LinearGradient style={Styles.bottom} colors={['#BFCDE0', '#5D5D81']}>
           <View style={Styles.linha2}>
-            <Text style={Styles.text}>00:00</Text>
+            <Text style={Styles.text}>{positionSlide.playTime}</Text>
             <Slider
               containerStyle={{flex: 1, marginRight: '6%', marginLeft: '6%'}}
               thumbTintColor="#FFFFFF"
-              value={2}
+              value={positionSlide.currentPositionSec}
               minimumValue={1}
-              maximumValue={5}
-              step={2}
+              maximumValue={positionSlide.currentDurationSec}
+              step={1}
               trackClickable={true}
               maximumTrackTintColor="#e9f0ef"
               minimumTrackTintColor="#fff"
             />
-            <Text style={Styles.texto}>00:45</Text>
+            <Text style={Styles.texto}>{positionSlide.playTime}</Text>
           </View>
 
           <View style={Styles.linha}>
-            <TouchableOpacity>
-              <Ionicons name="ios-repeat-outline" size={35} color={'#fff'} />
-            </TouchableOpacity>
-
-            <TouchableOpacity>
+            <TouchableOpacity onPress={idBack}>
               <AntDesign name="banckward" size={30} color={'#fff'} />
             </TouchableOpacity>
 
@@ -120,12 +155,8 @@ export default function Tela4() {
               )}
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={idNext}>
               <AntDesign name="forward" size={30} color={'#fff'} />
-            </TouchableOpacity>
-
-            <TouchableOpacity>
-              <Text style={Styles.once}>1x</Text>
             </TouchableOpacity>
           </View>
         </LinearGradient>
