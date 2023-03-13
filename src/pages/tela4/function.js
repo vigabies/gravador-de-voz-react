@@ -104,6 +104,7 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
       `UPDATE audios SET title="${nome}" WHERE id_audio = ${id_audio}`,
     );
     setAtualiza(await sqlite.query('SELECT * FROM audios'));
+    setModalVisibleIcon(false);
   }
 
   return (
@@ -199,7 +200,6 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
           animationType="slide"
           transparent={true}
           visible={modalScissors}
-          enum="overFullScreen"
           onRequestClose={() => {
             setModalScissors(!setModalScissors);
           }}>
@@ -209,7 +209,7 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
               <View style={Styles.modalViewEditar}>
                 <TouchableOpacity
                   style={Styles.buttonClose}
-                  onPress={() => setModalVisibleIcon(false)}>
+                  onPress={() => setModalScissors(false)}>
                   <LinearGradient
                     colors={['#BFCDE0', '#5D5D81']}
                     style={Styles.buttonCloseStyles}>
@@ -217,13 +217,15 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
                   </LinearGradient>
                 </TouchableOpacity>
 
+                <Text>EDITAR</Text>
+
                 <SliderContainer
-                  caption="<Slider/> 2 thumbs, min, max, and custom tint"
-                  sliderValue={[6, 18]}>
+                  caption="<Slider/> 2 thumbs, min, max,  and"
+                  sliderValue={[4, 16]}>
                   <Slider
                     animateTransitions
                     maximumTrackTintColor="#d3d3d3"
-                    maximumValue={20}
+                    maximumValue={18}
                     minimumTrackTintColor="#808080"
                     minimumValue={4}
                     step={2}
@@ -240,7 +242,7 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
                     </LinearGradient>
                   </TouchableOpacity>
 
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={() => setModalScissors(false)}>
                     <LinearGradient
                       colors={['#BFCDE0', '#5D5D81']}
                       style={Styles.salvar}>
