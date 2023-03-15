@@ -14,6 +14,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import LinearGradient from 'react-native-linear-gradient';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Foundation from 'react-native-vector-icons/Foundation';
 import {useNavigation} from '@react-navigation/native';
 import sqlite from '../../classes/sqlite';
 import {Slider} from '@miblanchard/react-native-slider';
@@ -85,7 +86,15 @@ export function Navegar(navigation) {
 }
 
 //a gente puxou la do index o setAtualiza
-export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
+export function Item({
+  data,
+  setAtualiza,
+  cliqueLista,
+  setCliqueLista,
+  recording,
+  onStartPlay,
+  onPausePlay,
+}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [modalScissors, setModalScissors] = useState(false);
   const [nome, setNome] = useState('');
@@ -105,6 +114,7 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
     );
     setAtualiza(await sqlite.query('SELECT * FROM audios'));
     setModalVisibleIcon(false);
+    setModalScissors(false);
   }
 
   return (
@@ -217,23 +227,40 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
                   </LinearGradient>
                 </TouchableOpacity>
 
-                <Text>EDITAR</Text>
+                <Text style={Styles.modaltext}>Editar</Text>
 
                 <SliderContainer
                   caption="<Slider/> 2 thumbs, min, max,  and"
                   sliderValue={[4, 16]}>
                   <Slider
-                    animateTransitions
+                    animateTransitions="slide"
                     maximumTrackTintColor="#d3d3d3"
-                    maximumValue={18}
-                    minimumTrackTintColor="#808080"
+                    minimumTrackTintColor="#3B3355"
+                    thumbTintColor="#3B3355"
                     minimumValue={4}
+                    maximumValue={18}
                     step={2}
-                    thumbTintColor="#808080"
                   />
                 </SliderContainer>
 
-                <View style={Styles.linhadelete}>
+                <View>
+                  <View style={Styles.editor}>
+                    <Text style={Styles.timer2}>0:00</Text>
+
+                    <TouchableOpacity
+                      onPress={recording ? onPausePlay : onStartPlay}>
+                      {recording ? (
+                        <Foundation name="pause" size={50} color={'#3B3355'} />
+                      ) : (
+                        <AntDesign name="play" size={50} color={'#3B3355'} />
+                      )}
+                    </TouchableOpacity>
+
+                    <Text style={Styles.timer2}>0:00</Text>
+                  </View>
+                </View>
+
+                <View style={Styles.linhadelete2}>
                   <TouchableOpacity>
                     <LinearGradient
                       colors={['#BFCDE0', '#5D5D81']}

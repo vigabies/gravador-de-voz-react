@@ -230,12 +230,41 @@ const Styles = StyleSheet.create({
   },
 
   // =========================== modal Editar
+
   modalViewEditar: {
     backgroundColor: '#fff',
     borderRadius: 10,
     width: 300,
     height: 300,
     alignItems: 'center',
+  },
+
+  modaltext: {
+    fontWeight: '700',
+    color: '#000',
+    fontSize: 20,
+    marginBottom: '10%',
+    marginTop: '10%',
+  },
+
+  linhadelete2: {
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: '-22%',
+  },
+
+  editor: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    flex: 0.5,
+  },
+
+  timer2: {
+    fontFamily: 'SofiaSans',
+    fontSize: 30,
+    fontWeight: '600',
+    color: '#3B3355',
   },
 });
 

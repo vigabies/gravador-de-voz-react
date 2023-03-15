@@ -36,10 +36,6 @@ export default function Tela4() {
     getData();
   }, [atualiza]);
 
-  function TouchPlay() {
-    setRecording(!recording);
-  }
-
   function TouchClique() {
     setCliqueLista(!cliqueLista);
   }
@@ -87,6 +83,9 @@ export default function Tela4() {
         TouchClique={TouchClique}
         cliqueLista={cliqueLista}
         setCliqueLista={setCliqueLista}
+        recording={recording}
+        onPausePlay={onPausePlay}
+        onStartPlay={onStartPlay}
       />
     );
   }
