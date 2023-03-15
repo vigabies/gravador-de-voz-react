@@ -265,6 +265,15 @@ const Styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: '600',
     color: '#3B3355',
+    marginRight: '4%',
+  },
+
+  timer3: {
+    fontFamily: 'SofiaSans',
+    fontSize: 30,
+    fontWeight: '600',
+    color: '#3B3355',
+    marginLeft: '4%',
   },
 });
 

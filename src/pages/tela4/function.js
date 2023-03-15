@@ -256,7 +256,7 @@ export function Item({
                       )}
                     </TouchableOpacity>
 
-                    <Text style={Styles.timer2}>0:00</Text>
+                    <Text style={Styles.timer3}>0:00</Text>
                   </View>
                 </View>
 
