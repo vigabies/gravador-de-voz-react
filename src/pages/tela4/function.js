@@ -18,6 +18,7 @@ import Foundation from 'react-native-vector-icons/Foundation';
 import {useNavigation} from '@react-navigation/native';
 import sqlite from '../../classes/sqlite';
 import {Slider} from '@miblanchard/react-native-slider';
+import Trimmer from 'react-native-trimmer';
 
 const borderWidth = 4;
 const trackMarkStyles = StyleSheet.create({
@@ -229,19 +230,15 @@ export function Item({
 
                 <Text style={Styles.modaltext}>Editar</Text>
 
-                <SliderContainer
-                  caption="<Slider/> 2 thumbs, min, max,  and"
-                  sliderValue={[4, 16]}>
-                  <Slider
-                    animateTransitions="slide"
-                    maximumTrackTintColor="#d3d3d3"
-                    minimumTrackTintColor="#3B3355"
-                    thumbTintColor="#3B3355"
-                    minimumValue={4}
-                    maximumValue={18}
-                    step={2}
-                  />
-                </SliderContainer>
+                <Slider
+                  animateTransitions="slide"
+                  maximumTrackTintColor="#d3d3d3"
+                  minimumTrackTintColor="#3B3355"
+                  thumbTintColor="#3B3355"
+                  minimumValue={4}
+                  maximumValue={18}
+                  step={2}
+                />
 
                 <View>
                   <View style={Styles.editor}>
