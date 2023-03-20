@@ -15,7 +15,6 @@ import RNFS from 'react-native-fs';
 import InAppReview from 'react-native-in-app-review';
 import SelectDropdown from 'react-native-select-dropdown';
 import Styles from './styles';
-import {Navegar} from './functions';
 import Tela4 from '../tela4';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';

@@ -6,7 +6,6 @@ import {
   Modal,
   TextInput,
   TouchableWithoutFeedback,
-  StyleSheet,
 } from 'react-native';
 import Styles from './styles';
 import Feather from 'react-native-vector-icons/Feather';
@@ -15,72 +14,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Foundation from 'react-native-vector-icons/Foundation';
-import {useNavigation} from '@react-navigation/native';
 import sqlite from '../../classes/sqlite';
-import {Slider} from '@miblanchard/react-native-slider';
 import Trimmer from 'react-native-trimmer';
-
-const borderWidth = 4;
-const trackMarkStyles = StyleSheet.create({
-  activeMark: {
-    borderColor: 'red',
-    borderWidth,
-    left: -borderWidth / 2,
-  },
-  inactiveMark: {
-    borderColor: 'grey',
-    borderWidth,
-    left: -borderWidth / 2,
-  },
-});
-
-const SliderContainer = ({
-  caption,
-  children,
-  sliderValue,
-  trackMarks,
-  vertical,
-}) => {
-  const [value, setValue] = useState(sliderValue);
-  let renderTrackMarkComponent;
-
-  if (trackMarks?.length && (!Array.isArray(value) || value?.length === 1)) {
-    renderTrackMarkComponent = index => {
-      const currentMarkValue = trackMarks[index];
-      const currentSliderValue =
-        value || (Array.isArray(value) && value[0]) || 0;
-      const style =
-        currentMarkValue > Math.max(currentSliderValue)
-          ? trackMarkStyles.activeMark
-          : trackMarkStyles.inactiveMark;
-      return <View style={style} />;
-    };
-  }
-
-  const renderChildren = () => {
-    return React.Children.map(children, child => {
-      if (!!child && child.type === Slider) {
-        return React.cloneElement(child, {
-          onValueChange: setValue,
-          renderTrackMarkComponent,
-          trackMarks,
-          value,
-        });
-      }
-
-      return child;
-    });
-  };
-  return (
-    <View style={Styles.sliderContainer}>
-      <View style={Styles.titleContainer}>
-        <Text>{caption}</Text>
-        <Text>{Array.isArray(value) ? value.join(' - ') : value}</Text>
-      </View>
-      {renderChildren()}
-    </View>
-  );
-};
 
 export function Navegar(navigation) {
   navigation.navigate('Principal');
@@ -99,6 +34,10 @@ export function Item({
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [modalScissors, setModalScissors] = useState(false);
   const [nome, setNome] = useState('');
+  const [trimmer, setTrimmer] = useState({
+    trimmerLeftHandlePosition: 0,
+    trimmerRightHandlePosition: 10000,
+  });
 
   //SEMPRE FAZER COM SQLITE, LEMBRA DE PUXAR COMO $
   async function deleteId(id_audio) {
@@ -230,15 +169,14 @@ export function Item({
 
                 <Text style={Styles.modaltext}>Editar</Text>
 
-                <Slider
-                  animateTransitions="slide"
-                  maximumTrackTintColor="#d3d3d3"
-                  minimumTrackTintColor="#3B3355"
-                  thumbTintColor="#3B3355"
-                  minimumValue={4}
-                  maximumValue={18}
-                  step={2}
-                />
+                <View>
+                  <Trimmer
+                    onHandleChange={onHandleChange}
+                    totalDuration={60000}
+                    trimmerLeftHandlePosition={trimmer.trimmerLeftHandlePosition}
+                    trimmerRightHandlePosition={trimmer.trimmerRightHandlePosition}
+                  />
+                </View>
 
                 <View>
                   <View style={Styles.editor}>
