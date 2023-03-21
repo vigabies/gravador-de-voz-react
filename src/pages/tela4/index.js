@@ -86,6 +86,7 @@ export default function Tela4() {
         recording={recording}
         onPausePlay={onPausePlay}
         onStartPlay={onStartPlay}
+        positionSlide={positionSlide}
       />
     );
   }

@@ -34,9 +34,15 @@ export function Item({
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [modalScissors, setModalScissors] = useState(false);
   const [nome, setNome] = useState('');
+  const [positionSlide, setPositionSlide] = useState({
+    currentPositionSec: 1,
+    currentDurationSec: 20,
+    playTime: '00:00',
+    duration: '00:00',
+  });
   const [trimmer, setTrimmer] = useState({
     trimmerLeftHandlePosition: 0,
-    trimmerRightHandlePosition: 10000,
+    trimmerRightHandlePosition: 13,
   });
 
   //SEMPRE FAZER COM SQLITE, LEMBRA DE PUXAR COMO $
@@ -55,6 +61,13 @@ export function Item({
     setAtualiza(await sqlite.query('SELECT * FROM audios'));
     setModalVisibleIcon(false);
     setModalScissors(false);
+  }
+
+  async function onHandleChange({leftPosition, rightPosition}) {
+    setTrimmer({
+      trimmerRightHandlePosition: rightPosition,
+      trimmerLeftHandlePosition: leftPosition,
+    });
   }
 
   return (
@@ -169,18 +182,21 @@ export function Item({
 
                 <Text style={Styles.modaltext}>Editar</Text>
 
-                <View>
+                <View style={Styles.viewTrimmer}>
                   <Trimmer
                     onHandleChange={onHandleChange}
-                    totalDuration={60000}
-                    trimmerLeftHandlePosition={trimmer.trimmerLeftHandlePosition}
-                    trimmerRightHandlePosition={trimmer.trimmerRightHandlePosition}
+                    totalDuration={positionSlide.currentDurationSec}
+                    trimmerLeftHandlePosition={
+                      trimmer.trimmerLeftHandlePosition
+                    }
+                    trimmerRightHandlePosition={
+                      trimmer.trimmerRightHandlePosition
+                    }
                   />
                 </View>
-
                 <View>
                   <View style={Styles.editor}>
-                    <Text style={Styles.timer2}>0:00</Text>
+                    <Text style={Styles.timer3}>{positionSlide.playTime} </Text>
 
                     <TouchableOpacity
                       onPress={recording ? onPausePlay : onStartPlay}>
@@ -191,7 +207,7 @@ export function Item({
                       )}
                     </TouchableOpacity>
 
-                    <Text style={Styles.timer3}>0:00</Text>
+                    <Text style={Styles.timer3}>{data.duracao}</Text>
                   </View>
                 </View>
 
