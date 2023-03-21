@@ -70,12 +70,13 @@ const Styles = StyleSheet.create({
   },
 
   linha3: {
-    marginLeft: '6%',
-    marginRight: '10%',
+    marginLeft: '5%',
+    marginRight: '5%',
   },
 
   linha4: {
     flexDirection: 'row',
+    marginBottom: '-2%',
   },
 
   linha5: {
@@ -112,8 +113,9 @@ const Styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '400',
     color: '#000000',
-    marginTop: '-3%',
+    marginTop: '-6%',
     fontFamily: 'SofiaSans-Light',
+    marginBottom: '3%',
   },
 
   tag: {
@@ -124,8 +126,9 @@ const Styles = StyleSheet.create({
     borderRadius: 2,
     textAlign: 'center',
     marginRight: 10,
-    marginTop: '-3%',
+    marginTop: '-6%',
     fontFamily: 'SofiaSans-Light',
+    marginBottom: '3%',
   },
 
   once: {

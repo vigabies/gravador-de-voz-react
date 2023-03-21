@@ -16,34 +16,52 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Foundation from 'react-native-vector-icons/Foundation';
 import sqlite from '../../classes/sqlite';
 import Trimmer from 'react-native-trimmer';
+import AudioRecorderPlayer from 'react-native-audio-recorder-player';
+const audioRecorderPlayer = new AudioRecorderPlayer();
 
 export function Navegar(navigation) {
   navigation.navigate('Principal');
 }
 
 //a gente puxou la do index o setAtualiza
-export function Item({
-  data,
-  setAtualiza,
-  cliqueLista,
-  setCliqueLista,
-  recording,
-  onStartPlay,
-  onPausePlay,
-}) {
+export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
   const [modalVisibleIcon, setModalVisibleIcon] = useState(false);
   const [modalScissors, setModalScissors] = useState(false);
   const [nome, setNome] = useState('');
+  const [recording, setRecording] = useState(false);
   const [positionSlide, setPositionSlide] = useState({
     currentPositionSec: 1,
     currentDurationSec: 20,
     playTime: '00:00',
     duration: '00:00',
   });
+
   const [trimmer, setTrimmer] = useState({
-    trimmerLeftHandlePosition: 0,
-    trimmerRightHandlePosition: 13,
+    trimmerLeftHandlePosition: 6,
+    trimmerRightHandlePosition: 12,
   });
+
+  async function onStartPlay() {
+    setRecording(true);
+    const msg = await audioRecorderPlayer.startPlayer();
+    console.log(msg);
+    audioRecorderPlayer.addPlayBackListener(e => {
+      setPositionSlide({
+        currentPositionSec: e.currentPosition,
+        currentDurationSec: e.duration,
+        playTime: audioRecorderPlayer.mmss(
+          Math.floor(e.currentPosition / 1000),
+        ),
+        duration: audioRecorderPlayer.mmss(Math.floor(e.duration / 1000)),
+      });
+      return;
+    });
+  }
+
+  async function onPausePlay() {
+    setRecording(false);
+    await audioRecorderPlayer.pausePlayer();
+  }
 
   //SEMPRE FAZER COM SQLITE, LEMBRA DE PUXAR COMO $
   async function deleteId(id_audio) {
@@ -87,13 +105,25 @@ export function Item({
           <Text style={Styles.subtext}>{data.tamanho} kB</Text>
 
           <View style={Styles.linha5}>
-            <TouchableOpacity onPress={() => setModalVisibleIcon(true)}>
+            <TouchableOpacity
+              onPress={() => setModalVisibleIcon(true)}
+              style={{
+                height: 50,
+                width: 50,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
               <Entypo name="dots-three-vertical" size={25} color={'#3B3355'} />
             </TouchableOpacity>
 
             <TouchableOpacity
               onPress={() => setModalScissors(true)}
-              style={{backgroundColor: '#ddd', height: 50, width: 50}}>
+              style={{
+                height: 50,
+                width: 50,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
               <Feather name="scissors" size={25} color={'#3B3355'} />
             </TouchableOpacity>
           </View>
@@ -166,8 +196,7 @@ export function Item({
           onRequestClose={() => {
             setModalScissors(!setModalScissors);
           }}>
-          <TouchableWithoutFeedback
-            onPress={() => setModalScissors(!modalScissors)}>
+          <TouchableWithoutFeedback>
             <View style={Styles.modalOpen}>
               <View style={Styles.modalViewEditar}>
                 <TouchableOpacity
@@ -185,6 +214,15 @@ export function Item({
                 <View style={Styles.viewTrimmer}>
                   <Trimmer
                     onHandleChange={onHandleChange}
+                    maximumZoomLevel={10}
+                    zoomMultiplier={100}
+                    initialZoomValue={2}
+                    scaleInOnInit={true}
+                    tintColor="#3B3355"
+                    markerColor="#dddd"
+                    trackBackgroundColor="#BFCDE0"
+                    trackBorderColor="#3B3355"
+                    scrubberColor="#b7e778"
                     totalDuration={positionSlide.currentDurationSec}
                     trimmerLeftHandlePosition={
                       trimmer.trimmerLeftHandlePosition
