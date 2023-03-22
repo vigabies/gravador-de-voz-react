@@ -31,7 +31,7 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
   const [recording, setRecording] = useState(false);
   const [positionSlide, setPositionSlide] = useState({
     currentPositionSec: 1,
-    currentDurationSec: 20,
+    currentDurationSec: 20000,
     playTime: '00:00',
     duration: '00:00',
   });
@@ -86,6 +86,10 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
       trimmerRightHandlePosition: rightPosition,
       trimmerLeftHandlePosition: leftPosition,
     });
+  }
+
+  async function onScrubbingComplete({newValue}) {
+    setTrimmer({recording: false, scrubberPosition: newValue});
   }
 
   return (
@@ -214,15 +218,6 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
                 <View style={Styles.viewTrimmer}>
                   <Trimmer
                     onHandleChange={onHandleChange}
-                    maximumZoomLevel={10}
-                    zoomMultiplier={100}
-                    initialZoomValue={2}
-                    scaleInOnInit={true}
-                    tintColor="#3B3355"
-                    markerColor="#dddd"
-                    trackBackgroundColor="#BFCDE0"
-                    trackBorderColor="#3B3355"
-                    scrubberColor="#b7e778"
                     totalDuration={positionSlide.currentDurationSec}
                     trimmerLeftHandlePosition={
                       trimmer.trimmerLeftHandlePosition
@@ -230,8 +225,17 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
                     trimmerRightHandlePosition={
                       trimmer.trimmerRightHandlePosition
                     }
+                    tintColor="#5D5D81"
+                    trackBackgroundColor="#BFCDE0"
+                    trackBorderColor="#BFCDE0,"
+                    scrubberColor="#3B3355"
+                    scrubberPosition={trimmer.scrubberPosition}
+                    onScrubbingComplete={onScrubbingComplete}
+                    maximumZoomLevel={50}
+                    initialZoomValue={0.7}
                   />
                 </View>
+
                 <View>
                   <View style={Styles.editor}>
                     <Text style={Styles.timer3}>{positionSlide.playTime} </Text>

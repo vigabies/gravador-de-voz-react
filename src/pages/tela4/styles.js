@@ -239,21 +239,22 @@ const Styles = StyleSheet.create({
     borderRadius: 10,
     width: 300,
     height: 300,
-    alignItems: 'center',
   },
 
   modaltext: {
     fontWeight: '700',
     color: '#000',
     fontSize: 20,
-    marginBottom: '10%',
+    marginBottom: '5%',
     marginTop: '10%',
+    textAlign: 'center',
   },
 
   linhadelete2: {
     flex: 1,
     flexDirection: 'row',
-    marginTop: '-22%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   editor: {
