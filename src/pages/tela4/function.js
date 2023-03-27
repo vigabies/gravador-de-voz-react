@@ -231,12 +231,10 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
                     scrubberColor="#3B3355"
                     scrubberPosition={trimmer.scrubberPosition}
                     onScrubbingComplete={onScrubbingComplete}
-                    maximumZoomLevel={30}
+                    maximumZoomLevel={40}
                     initialZoomValue={0.7}
                   />
                 </View>
-
-                {/* não esta aparecendo */}
 
                 <View>
                   <View style={Styles.editor}>

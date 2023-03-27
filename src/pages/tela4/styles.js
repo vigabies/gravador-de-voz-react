@@ -251,9 +251,8 @@ const Styles = StyleSheet.create({
   },
 
   linhadelete2: {
-    flex: 1,
     flexDirection: 'row',
-    alignItems: 'center',
+    marginTop: '10%',
     justifyContent: 'center',
   },
 
