@@ -238,7 +238,7 @@ const Styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     width: 300,
-    height: 300,
+    height: 400,
   },
 
   modaltext: {
@@ -260,8 +260,7 @@ const Styles = StyleSheet.create({
   editor: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'center',
-    flex: 0.5,
+    marginTop: '10%',
   },
 
   timer2: {

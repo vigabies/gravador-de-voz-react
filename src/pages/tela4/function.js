@@ -231,14 +231,16 @@ export function Item({data, setAtualiza, cliqueLista, setCliqueLista}) {
                     scrubberColor="#3B3355"
                     scrubberPosition={trimmer.scrubberPosition}
                     onScrubbingComplete={onScrubbingComplete}
-                    maximumZoomLevel={50}
+                    maximumZoomLevel={30}
                     initialZoomValue={0.7}
                   />
                 </View>
 
+                {/* não esta aparecendo */}
+
                 <View>
                   <View style={Styles.editor}>
-                    <Text style={Styles.timer3}>{positionSlide.playTime} </Text>
+                    <Text style={Styles.timer3}>{positionSlide.playTime}</Text>
 
                     <TouchableOpacity
                       onPress={recording ? onPausePlay : onStartPlay}>
